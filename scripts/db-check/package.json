@@ -1,0 +1,9 @@
+{
+  "name": "saiqi-db-check",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Validation Docker-less des migrations SAIQI sur un vrai PostgreSQL embarqué (+ shim pgTAP).",
+  "type": "module",
+  "scripts": { "check": "node run.mjs" },
+  "dependencies": { "embedded-postgres": "latest", "pg": "^8.13.0" }
+}
