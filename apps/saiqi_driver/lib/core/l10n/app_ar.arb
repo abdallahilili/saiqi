@@ -1,5 +1,250 @@
 {
   "@@locale": "ar",
+  "adminBadge": "تطبيق المشرف",
+  "noPermission": "ليس لديك صلاحية لهذه الصفحة",
+  "more": "المزيد",
+  "dashboard": "لوحة التحكم",
+  "driversTitle": "السائقون",
+  "bookingsTitle": "الحجوزات",
+  "walletsTitle": "المحافظ",
+  "kpiPendingDrivers": "ملفات بانتظار المراجعة",
+  "kpiNewDrivers": "سائقون جدد (7 أيام)",
+  "kpiApprovedDrivers": "سائقون معتمدون",
+  "kpiClients": "العملاء",
+  "kpiBookingsToday": "حجوزات اليوم",
+  "kpiPendingBookings": "حجوزات قيد الانتظار",
+  "kpiCommissionsToday": "عمولات اليوم",
+  "kpiCommissionsTotal": "إجمالي العمولات",
+  "kpiOpenComplaints": "شكاوى مفتوحة",
+  "kpiPendingTopups": "طلبات شحن معلقة",
+  "searchPeople": "بحث بالاسم أو الرقم",
+  "driverDetail": "ملف السائق",
+  "approveDriver": "اعتماد السائق",
+  "rejectDriver": "رفض الملف",
+  "rejectReasonTitle": "سبب الرفض (يظهر للسائق)",
+  "driverApprovedMsg": "تم اعتماد السائق",
+  "driverRejectedMsg": "تم رفض الملف",
+  "suspendDriver": "إيقاف السائق",
+  "reinstateDriver": "إعادة تفعيل السائق",
+  "suspendReasonTitle": "سبب الإيقاف",
+  "accountActions": "إجراءات الحساب",
+  "suspendAccount": "تعليق الحساب",
+  "blockAccount": "حظر الحساب",
+  "reactivateAccount": "إعادة تفعيل الحساب",
+  "accountStatusChanged": "تم تحديث حالة الحساب",
+  "noDocuments": "لم يرفع السائق مستندات بعد",
+  "noVehicle": "لم تُسجَّل سيارة بعد",
+  "noServicesAdmin": "لا توجد خدمات",
+  "approveDocument": "قبول المستند",
+  "rejectDocument": "رفض المستند",
+  "documentApprovedMsg": "تم قبول المستند",
+  "documentRejectedMsg": "تم رفض المستند",
+  "rejectDocReasonTitle": "سبب رفض المستند",
+  "filterPending": "بانتظار المراجعة",
+  "documentsProgress": "{count} مستند",
+  "@documentsProgress": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "joinedOn": "انضم في {date}",
+  "@joinedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "driverNotFound": "السائق غير موجود",
+  "filterStatus": "الحالة",
+  "filterChannel": "القناة",
+  "filterCity": "المدينة",
+  "filterDate": "التاريخ",
+  "clearFilters": "مسح التصفية",
+  "bookingDetail": "تفاصيل الحجز",
+  "noBookings": "لا توجد حجوزات",
+  "offersSent": "العروض المرسلة",
+  "offerStatus_pending": "بانتظار الرد",
+  "offerStatus_accepted": "قبل",
+  "offerStatus_declined": "رفض",
+  "offerStatus_expired": "منتهٍ",
+  "reassignDriver": "تغيير السائق",
+  "reassignedMsg": "تم إرسال الطلب للسائقين المختارين",
+  "cancelBookingAdmin": "إلغاء الحجز",
+  "cancelReasonPrompt": "سبب الإلغاء",
+  "bookingCancelledMsg": "تم إلغاء الحجز",
+  "contactClient": "اتصال بالعميل",
+  "contactDriver": "اتصال بالسائق",
+  "guestClient": "عميل بدون حساب",
+  "registeredClient": "عميل مسجّل",
+  "noDriverAssigned": "لم يُعيَّن سائق بعد",
+  "createRequest": "إنشاء طلب",
+  "newRequest": "طلب جديد لعميل",
+  "newRequestIntro": "أنشئ طلبًا لعميل اتصل بك أو راسلك، ثم أرسله لسائق أو لعدة سائقين.",
+  "clientNameLabel": "اسم العميل",
+  "clientPhoneLabel": "هاتف العميل",
+  "agreedPriceField": "السعر المتفق عليه (أوقية)",
+  "originChannel": "قناة الطلب",
+  "chooseDrivers": "اختر السائقين",
+  "driversInCityHint": "السائقون المعتمدون الذين يقدمون هذه الخدمة في المدينة المختارة",
+  "onlyAvailable": "المتاحون فقط",
+  "noDriversFound": "لا يوجد سائقون مطابقون",
+  "selectedCount": "{count} محدد",
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "selectAtLeastOneDriver": "اختر سائقًا واحدًا على الأقل",
+  "sendRequest": "إنشاء وإرسال الطلب",
+  "requestCreatedMsg": "تم إنشاء الطلب وإرساله",
+  "multiDriverHint": "عند اختيار عدة سائقين، الأول الذي يقبل يحصل على الطلب.",
+  "selectAll": "تحديد الكل",
+  "topupsTitle": "طلبات الشحن",
+  "noTopupsAdmin": "لا توجد طلبات شحن",
+  "approveTopup": "قبول الشحن",
+  "rejectTopup": "رفض الشحن",
+  "topupApprovedMsg": "تم شحن المحفظة",
+  "topupRejectedMsg": "تم رفض الطلب",
+  "topupNoteHint": "ملاحظة (اختياري)",
+  "proofImage": "إثبات الدفع",
+  "noProof": "لا يوجد إثبات",
+  "adjustWallet": "تعديل الرصيد يدويًا",
+  "adjustAmountHint": "مبلغ موجب للإضافة أو سالب للخصم",
+  "adjustNote": "سبب التعديل",
+  "adjustDone": "تم تعديل الرصيد",
+  "walletHistory": "سجل المحفظة",
+  "driversWallets": "محافظ السائقين",
+  "referenceLabel": "المرجع",
+  "methodLabel": "الطريقة",
+  "commissionsTitle": "العمولات",
+  "defaultRate": "النسبة الافتراضية",
+  "rateOverrides": "نسب مخصصة",
+  "rateByService": "حسب الخدمة",
+  "rateByCity": "حسب المدينة",
+  "rateByServiceCity": "حسب الخدمة والمدينة",
+  "addRate": "إضافة نسبة",
+  "rateField": "النسبة (%)",
+  "rateInvalid": "أدخل نسبة بين 0 و 100",
+  "rateSaved": "تم حفظ النسبة",
+  "rateNeedsScope": "اختر خدمة أو مدينة أو كليهما",
+  "ratePriorityNote": "الأولوية: خدمة+مدينة، ثم خدمة، ثم مدينة، ثم النسبة الافتراضية.",
+  "commissionHistory": "سجل العمولات",
+  "noCommissions": "لا توجد عمولات بعد",
+  "refundedLabel": "مستردة",
+  "generalSettings": "إعدادات عامة",
+  "responseTimeout": "مهلة رد السائق (دقائق)",
+  "lowBalanceThresholdField": "حد تنبيه الرصيد المنخفض (أوقية)",
+  "minTopupField": "الحد الأدنى للشحن (أوقية)",
+  "supportPhoneField": "هاتف الدعم",
+  "supportWhatsappField": "واتساب الدعم",
+  "topupAccountsTitle": "حسابات استلام الشحن",
+  "accountHint": "رقم الحساب",
+  "settingsSaved": "تم حفظ الإعدادات",
+  "complaintsTitle": "الشكاوى",
+  "noComplaints": "لا توجد شكاوى",
+  "complaintDetail": "تفاصيل الشكوى",
+  "complaintAuthor": "المُبلِّغ",
+  "complaintAgainst": "المشكو منه",
+  "resolutionField": "القرار / الرد",
+  "markInReview": "قيد المعالجة",
+  "resolveComplaint": "تمت المعالجة",
+  "dismissComplaint": "حفظ الشكوى",
+  "complaintUpdatedMsg": "تم تحديث الشكوى",
+  "warnUser": "إرسال تنبيه",
+  "warnMessageHint": "نص التنبيه",
+  "warnSentMsg": "تم إرسال التنبيه",
+  "warningTitle": "تنبيه من الإدارة",
+  "reviewsModeration": "مراجعة التقييمات",
+  "hideReview": "إخفاء",
+  "showReview": "إظهار",
+  "reviewHidden": "مخفي",
+  "noReviewsAdmin": "لا توجد تقييمات",
+  "reviewFor": "عن السائق {name}",
+  "@reviewFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "clientsTitle": "العملاء",
+  "noClients": "لا يوجد عملاء",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "newPasswordPrompt": "كلمة المرور الجديدة (8 أحرف على الأقل)",
+  "passwordResetDone": "تمت إعادة تعيين كلمة المرور",
+  "userDetail": "تفاصيل الحساب",
+  "catalogTitle": "المدن والخدمات",
+  "citiesTitle": "المدن",
+  "servicesTitle": "الخدمات",
+  "addCity": "إضافة مدينة",
+  "editCity": "تعديل المدينة",
+  "addServiceType": "إضافة خدمة",
+  "editServiceType": "تعديل الخدمة",
+  "nameArField": "الاسم بالعربية",
+  "nameFrField": "الاسم بالفرنسية",
+  "iconField": "الأيقونة",
+  "activeField": "مفعّل",
+  "deleteBlocked": "تعذّر الحذف لوجود بيانات مرتبطة. عطّله بدلًا من ذلك.",
+  "deleteConfirm": "حذف نهائي؟",
+  "teamTitle": "فريق الإدارة",
+  "addMember": "إضافة عضو",
+  "roleField": "الدور",
+  "memberCreated": "تم إنشاء الحساب",
+  "changeRole": "تغيير الدور",
+  "roleChanged": "تم تغيير الدور",
+  "roleSuperAdminDesc": "كل الصلاحيات",
+  "roleValidatorDesc": "مراجعة ملفات السائقين",
+  "roleSupportDesc": "الحجوزات والشحن والشكاوى والعملاء",
+  "auditTitle": "سجل التدقيق",
+  "noAudit": "لا توجد عمليات مسجلة",
+  "by": "بواسطة {name}",
+  "@by": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "announcementsTitle": "الإعلانات",
+  "newAnnouncement": "إعلان جديد",
+  "audienceField": "الفئة المستهدفة",
+  "announcementTitleField": "العنوان",
+  "announcementBodyField": "النص",
+  "announcementSentMsg": "تم إرسال الإعلان",
+  "recipientsCount": "{count} مستلم",
+  "@recipientsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "noAnnouncements": "لا توجد إعلانات",
+  "audit_approve_driver": "اعتماد سائق",
+  "audit_reject_driver": "رفض ملف سائق",
+  "audit_review_document": "مراجعة مستند",
+  "audit_set_driver_status": "تغيير حالة سائق",
+  "audit_set_account_status": "تغيير حالة حساب",
+  "audit_set_admin_role": "تغيير دور مشرف",
+  "audit_review_topup": "معالجة طلب شحن",
+  "audit_adjust_wallet": "تعديل رصيد",
+  "audit_create_booking": "إنشاء طلب",
+  "audit_reassign_booking": "تغيير سائق حجز",
+  "audit_cancel_booking": "إلغاء حجز",
+  "audit_handle_complaint": "معالجة شكوى",
+  "audit_moderate_review": "إدارة تقييم",
+  "audit_send_announcement": "إرسال إعلان",
+  "audit_reset_password": "إعادة تعيين كلمة مرور",
+  "audit_create_admin": "إنشاء مشرف",
+  "audit_warn_user": "تنبيه مستخدم",
+  "audit_insert": "إضافة",
+  "audit_update": "تعديل",
+  "audit_delete": "حذف",
   "phoneLabel": "رقم الهاتف",
   "phoneHint": "مثال: 36 12 34 56",
   "phonePrefix": "+222",
@@ -134,6 +379,215 @@
   "areYouSure": "هل أنت متأكد؟",
   "configMissingTitle": "إعداد ناقص",
   "configMissingBody": "لم يتم تحديد SUPABASE_URL و SUPABASE_PUBLISHABLE_KEY. شغّل التطبيق مع --dart-define-from-file=.env",
+  "driverBadge": "تطبيق السائق",
+  "saved": "تم الحفظ",
+  "applicationTitle": "ملف السائق",
+  "applicationIntro": "أكمل ملفك ليراجعه فريقنا. التسجيل مجاني، وتُحتسب عمولة فقط على كل خدمة تقبلها.",
+  "stepPersonal": "المعلومات الشخصية",
+  "stepDocuments": "المستندات",
+  "stepVehicle": "السيارة",
+  "stepServices": "الخدمات والأسعار",
+  "stepAvailability": "أوقات العمل",
+  "stepComplete": "مكتمل",
+  "stepTodo": "غير مكتمل",
+  "stepOptional": "اختياري",
+  "submitApplication": "إرسال الملف للمراجعة",
+  "submitApplicationConfirm": "بعد الإرسال لن تتمكن من التعديل حتى تتم المراجعة.",
+  "applicationSubmitted": "تم إرسال ملفك. سنراجعه قريبًا.",
+  "applicationRejectedTitle": "تم رفض ملفك",
+  "applicationRejectedHint": "صحّح ما يلزم ثم أعد إرسال الملف.",
+  "missingItems": "ينقص: {items}",
+  "@missingItems": {
+    "placeholders": {
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "yearsExperienceLabel": "سنوات الخبرة",
+  "bioLabel": "نبذة عنك",
+  "bioHint": "مثال: سائق محترف أعرف المدينة جيدًا…",
+  "profilePhoto": "الصورة الشخصية",
+  "changePhoto": "تغيير الصورة",
+  "cityOfWork": "مدينة العمل الرئيسية",
+  "documentsIntro": "التقط صورًا واضحة ومقروءة لكل مستند.",
+  "docRejectedReason": "مرفوض: {reason}",
+  "@docRejectedReason": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "vehicleTitle": "معلومات السيارة",
+  "vehicleType": "نوع السيارة",
+  "vehicleBrand": "الماركة",
+  "vehicleModel": "الطراز",
+  "vehicleYear": "سنة الصنع",
+  "vehicleColor": "اللون",
+  "vehicleSeats": "عدد المقاعد",
+  "vehiclePlate": "رقم اللوحة",
+  "vehiclePhotos": "صور السيارة",
+  "addVehiclePhoto": "إضافة صورة",
+  "maxPhotosReached": "الحد الأقصى 5 صور.",
+  "servicesIntro": "اختر الخدمات التي تقدمها ومدنها وسعر كل منها.",
+  "addService": "إضافة خدمة",
+  "editService": "تعديل الخدمة",
+  "serviceCities": "المدن التي تخدمها",
+  "servicePriceField": "السعر (أوقية)",
+  "priceUnitField": "وحدة السعر",
+  "serviceActive": "مفعّلة",
+  "noServicesYet": "لم تضف أي خدمة بعد",
+  "noServicesHint": "أضف خدمة واحدة على الأقل لتظهر للعملاء.",
+  "deleteServiceConfirm": "حذف هذه الخدمة؟",
+  "selectAtLeastOneCity": "اختر مدينة واحدة على الأقل",
+  "serviceAlreadyAdded": "هذه الخدمة مضافة مسبقًا",
+  "availabilityIntro": "حدد الأيام والساعات التي تعمل فيها.",
+  "dayOff": "عطلة",
+  "timeFrom": "من",
+  "timeTo": "إلى",
+  "invalidTimeRange": "وقت النهاية يجب أن يكون بعد البداية",
+  "pendingTitle": "ملفك قيد المراجعة",
+  "pendingBody": "يراجع فريق سائقي ملفك. سنخبرك فور اعتماده وستنتقل الشاشة تلقائيًا.",
+  "pendingSince": "أُرسل في {date}",
+  "@pendingSince": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "suspendedTitle": "حسابك موقوف",
+  "suspendedBody": "تم تعليق حسابك مؤقتًا. تواصل مع الدعم لمعرفة التفاصيل.",
+  "hello": "مرحبًا، {name}",
+  "@hello": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "availabilityOn": "أنت متاح لاستقبال الطلبات",
+  "availabilityOff": "أنت غير متاح حاليًا",
+  "availabilityToggleHint": "فعّل الزر لتصلك الطلبات الجديدة.",
+  "walletBalance": "رصيد المحفظة",
+  "lowBalanceWarning": "رصيدك منخفض. اشحن محفظتك حتى لا تفوتك الطلبات.",
+  "topUp": "شحن المحفظة",
+  "incomingRequests": "الطلبات الواردة",
+  "noIncomingRequests": "لا توجد طلبات حاليًا",
+  "noIncomingHint": "ستظهر الطلبات الجديدة هنا فورًا.",
+  "upcomingTrips": "رحلاتك القادمة",
+  "seeAll": "عرض الكل",
+  "requestDetails": "تفاصيل الطلب",
+  "commissionLabel": "العمولة",
+  "acceptRequest": "قبول الطلب",
+  "rejectRequest": "رفض",
+  "commissionNotice": "ستُخصم عمولة {amount} ({rate}) من محفظتك عند القبول.",
+  "@commissionNotice": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "balanceAfterAccept": "رصيدك بعد القبول: {amount}",
+  "@balanceAfterAccept": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "insufficientBalanceBlock": "رصيدك ({balance}) لا يكفي لعمولة هذا الطلب ({commission}). اشحن محفظتك لتتمكن من القبول.",
+  "@insufficientBalanceBlock": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      },
+      "commission": {
+        "type": "String"
+      }
+    }
+  },
+  "rechargeToAccept": "شحن المحفظة",
+  "requestAccepted": "تم قبول الطلب",
+  "requestRejectedMsg": "تم رفض الطلب",
+  "rejectConfirm": "هل تريد رفض هذا الطلب؟",
+  "requestGone": "لم يعد هذا الطلب متاحًا.",
+  "requestedBy": "طلب من",
+  "clientPaysDriver": "يدفع العميل المبلغ للسائق مباشرة (نقدًا أو دفع هاتفي).",
+  "firstAcceptWins": "أُرسل هذا الطلب لعدة سائقين، والأول الذي يقبل يحصل عليه.",
+  "myTrips": "رحلاتي",
+  "tripsUpcoming": "القادمة",
+  "tripsHistory": "السابقة",
+  "noTrips": "لا توجد رحلات",
+  "tripDetails": "تفاصيل الرحلة",
+  "startEnRoute": "أنا في الطريق",
+  "startTrip": "بدء الرحلة",
+  "finishTrip": "إنهاء الرحلة",
+  "cancelTrip": "إلغاء الرحلة",
+  "cancelTripConfirm": "ستُرجع العمولة إلى محفظتك. هل تريد الإلغاء؟",
+  "tripCancelled": "تم إلغاء الرحلة",
+  "statusUpdated": "تم تحديث الحالة",
+  "clientContact": "التواصل مع العميل",
+  "scheduledFor": "الموعد",
+  "agreedPrice": "السعر",
+  "commissionDeducted": "العمولة المخصومة",
+  "wallet": "المحفظة",
+  "transactions": "العمليات",
+  "noTransactions": "لا توجد عمليات بعد",
+  "topupRequests": "طلبات الشحن",
+  "noTopups": "لا توجد طلبات شحن",
+  "requestTopup": "طلب شحن",
+  "topupAmount": "المبلغ (أوقية)",
+  "topupMethod": "طريقة الدفع",
+  "topupReference": "رقم العملية / المرجع",
+  "topupProof": "صورة إثبات التحويل",
+  "topupSubmitted": "تم إرسال طلب الشحن. سيُعتمد قريبًا.",
+  "topupHowTo": "أرسل المبلغ إلى أحد الحسابات التالية ثم أرفق إثبات التحويل.",
+  "minTopup": "الحد الأدنى للشحن: {amount}",
+  "@minTopup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "accountNumber": "الحساب",
+  "balanceAfterTx": "الرصيد: {amount}",
+  "@balanceAfterTx": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "howCommissionWorks": "تُخصم العمولة من رصيدك عند قبول كل خدمة، وتُسترجع إذا أُلغيت.",
+  "noAccountConfigured": "لم يحدد المشرف حسابات الدفع بعد.",
+  "refInPayment": "رقم الحساب منسوخ",
+  "myProfile": "ملفي",
+  "statistics": "الإحصاءات",
+  "completedTrips": "رحلات منجزة",
+  "revenueGross": "المبالغ المحصّلة",
+  "commissionsPaid": "العمولات المدفوعة",
+  "revenueNet": "الصافي",
+  "ratingLabel": "التقييم",
+  "reviewsReceived": "التقييمات المستلمة",
+  "noReviewsYet": "لا توجد تقييمات بعد",
+  "publicProfile": "ملفي العام",
+  "publicProfileHint": "هذا ما يراه العملاء عنك.",
+  "editPersonalInfo": "تعديل المعلومات",
+  "myDocuments": "مستنداتي",
+  "helpAndReport": "المساعدة والإبلاغ",
+  "reportProblem": "الإبلاغ عن مشكلة",
+  "reportHint": "صِف المشكلة بالتفصيل…",
+  "reportSent": "تم إرسال بلاغك. سنتواصل معك.",
+  "contactSupportCall": "اتصال بالدعم",
+  "contactSupportWhatsapp": "واتساب الدعم",
+  "tapToEdit": "اضغط للتعديل",
   "bookingStatus_pending": "قيد الانتظار",
   "bookingStatus_accepted": "مقبول",
   "bookingStatus_enRoute": "السائق في الطريق",
@@ -286,6 +740,23 @@
   "err_internal_error": "خطأ في الخادم. حاول لاحقًا.",
   "err_duplicate": "هذا العنصر موجود مسبقًا.",
   "err_rate_limited": "محاولات كثيرة. انتظر قليلًا ثم حاول مجددًا.",
+  "city": "المدينة",
+  "cities": "المدن",
+  "serviceType": "نوع الخدمة",
+  "dateAndTime": "التاريخ والوقت",
+  "pickup": "مكان الانطلاق",
+  "dropoff": "الوجهة",
+  "passengers": "عدد الركاب",
+  "notes": "ملاحظات",
+  "price": "السعر",
+  "client": "العميل",
+  "driver": "السائق",
+  "status": "الحالة",
+  "channel": "القناة",
+  "createdBy": "أنشأه",
+  "createdByAdmin": "أنشأه المشرف",
+  "reason": "السبب",
+  "reasonHint": "اكتب السبب",
   "verified": "موثّق",
   "availableNow": "متاح الآن",
   "unavailableNow": "غير متاح",

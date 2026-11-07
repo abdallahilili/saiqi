@@ -9,6 +9,633 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
+  String get adminBadge => 'Espace admin';
+
+  @override
+  String get noPermission => 'Vous n\'avez pas accès à cette page';
+
+  @override
+  String get more => 'Plus';
+
+  @override
+  String get dashboard => 'Tableau de bord';
+
+  @override
+  String get driversTitle => 'Chauffeurs';
+
+  @override
+  String get bookingsTitle => 'Réservations';
+
+  @override
+  String get walletsTitle => 'Portefeuilles';
+
+  @override
+  String get kpiPendingDrivers => 'Dossiers en attente';
+
+  @override
+  String get kpiNewDrivers => 'Nouveaux chauffeurs (7 j)';
+
+  @override
+  String get kpiApprovedDrivers => 'Chauffeurs validés';
+
+  @override
+  String get kpiClients => 'Clients';
+
+  @override
+  String get kpiBookingsToday => 'Réservations du jour';
+
+  @override
+  String get kpiPendingBookings => 'Réservations en attente';
+
+  @override
+  String get kpiCommissionsToday => 'Commissions du jour';
+
+  @override
+  String get kpiCommissionsTotal => 'Commissions totales';
+
+  @override
+  String get kpiOpenComplaints => 'Plaintes ouvertes';
+
+  @override
+  String get kpiPendingTopups => 'Recharges en attente';
+
+  @override
+  String get searchPeople => 'Rechercher un nom ou un numéro';
+
+  @override
+  String get driverDetail => 'Dossier chauffeur';
+
+  @override
+  String get approveDriver => 'Valider le chauffeur';
+
+  @override
+  String get rejectDriver => 'Refuser le dossier';
+
+  @override
+  String get rejectReasonTitle => 'Motif du refus (visible par le chauffeur)';
+
+  @override
+  String get driverApprovedMsg => 'Chauffeur validé';
+
+  @override
+  String get driverRejectedMsg => 'Dossier refusé';
+
+  @override
+  String get suspendDriver => 'Suspendre le chauffeur';
+
+  @override
+  String get reinstateDriver => 'Réactiver le chauffeur';
+
+  @override
+  String get suspendReasonTitle => 'Motif de la suspension';
+
+  @override
+  String get accountActions => 'Actions sur le compte';
+
+  @override
+  String get suspendAccount => 'Suspendre le compte';
+
+  @override
+  String get blockAccount => 'Bloquer le compte';
+
+  @override
+  String get reactivateAccount => 'Réactiver le compte';
+
+  @override
+  String get accountStatusChanged => 'Statut du compte mis à jour';
+
+  @override
+  String get noDocuments => 'Aucun document envoyé';
+
+  @override
+  String get noVehicle => 'Aucun véhicule enregistré';
+
+  @override
+  String get noServicesAdmin => 'Aucun service';
+
+  @override
+  String get approveDocument => 'Valider le document';
+
+  @override
+  String get rejectDocument => 'Refuser le document';
+
+  @override
+  String get documentApprovedMsg => 'Document validé';
+
+  @override
+  String get documentRejectedMsg => 'Document refusé';
+
+  @override
+  String get rejectDocReasonTitle => 'Motif du refus du document';
+
+  @override
+  String get filterPending => 'En attente';
+
+  @override
+  String documentsProgress(String count) {
+    return '$count document(s)';
+  }
+
+  @override
+  String joinedOn(String date) {
+    return 'Inscrit le $date';
+  }
+
+  @override
+  String get driverNotFound => 'Chauffeur introuvable';
+
+  @override
+  String get filterStatus => 'Statut';
+
+  @override
+  String get filterChannel => 'Canal';
+
+  @override
+  String get filterCity => 'Ville';
+
+  @override
+  String get filterDate => 'Date';
+
+  @override
+  String get clearFilters => 'Effacer les filtres';
+
+  @override
+  String get bookingDetail => 'Détail de la réservation';
+
+  @override
+  String get noBookings => 'Aucune réservation';
+
+  @override
+  String get offersSent => 'Offres envoyées';
+
+  @override
+  String get offerStatus_pending => 'En attente';
+
+  @override
+  String get offerStatus_accepted => 'A accepté';
+
+  @override
+  String get offerStatus_declined => 'A refusé';
+
+  @override
+  String get offerStatus_expired => 'Expiré';
+
+  @override
+  String get reassignDriver => 'Changer de chauffeur';
+
+  @override
+  String get reassignedMsg => 'Demande renvoyée aux chauffeurs choisis';
+
+  @override
+  String get cancelBookingAdmin => 'Annuler la réservation';
+
+  @override
+  String get cancelReasonPrompt => 'Motif de l\'annulation';
+
+  @override
+  String get bookingCancelledMsg => 'Réservation annulée';
+
+  @override
+  String get contactClient => 'Contacter le client';
+
+  @override
+  String get contactDriver => 'Contacter le chauffeur';
+
+  @override
+  String get guestClient => 'Client sans compte';
+
+  @override
+  String get registeredClient => 'Client inscrit';
+
+  @override
+  String get noDriverAssigned => 'Aucun chauffeur assigné';
+
+  @override
+  String get createRequest => 'Créer une demande';
+
+  @override
+  String get newRequest => 'Nouvelle demande client';
+
+  @override
+  String get newRequestIntro =>
+      'Créez une demande pour un client qui vous a appelé ou écrit, puis envoyez-la à un ou plusieurs chauffeurs.';
+
+  @override
+  String get clientNameLabel => 'Nom du client';
+
+  @override
+  String get clientPhoneLabel => 'Téléphone du client';
+
+  @override
+  String get agreedPriceField => 'Prix convenu (MRU)';
+
+  @override
+  String get originChannel => 'Canal d\'origine';
+
+  @override
+  String get chooseDrivers => 'Choisir les chauffeurs';
+
+  @override
+  String get driversInCityHint =>
+      'Chauffeurs validés proposant ce service dans la ville choisie';
+
+  @override
+  String get onlyAvailable => 'Disponibles seulement';
+
+  @override
+  String get noDriversFound => 'Aucun chauffeur correspondant';
+
+  @override
+  String selectedCount(String count) {
+    return '$count sélectionné(s)';
+  }
+
+  @override
+  String get selectAtLeastOneDriver => 'Choisissez au moins un chauffeur';
+
+  @override
+  String get sendRequest => 'Créer et envoyer la demande';
+
+  @override
+  String get requestCreatedMsg => 'Demande créée et envoyée';
+
+  @override
+  String get multiDriverHint =>
+      'Avec plusieurs chauffeurs, le premier qui accepte obtient la demande.';
+
+  @override
+  String get selectAll => 'Tout sélectionner';
+
+  @override
+  String get topupsTitle => 'Demandes de recharge';
+
+  @override
+  String get noTopupsAdmin => 'Aucune demande de recharge';
+
+  @override
+  String get approveTopup => 'Valider la recharge';
+
+  @override
+  String get rejectTopup => 'Refuser la recharge';
+
+  @override
+  String get topupApprovedMsg => 'Portefeuille crédité';
+
+  @override
+  String get topupRejectedMsg => 'Demande refusée';
+
+  @override
+  String get topupNoteHint => 'Note (facultatif)';
+
+  @override
+  String get proofImage => 'Preuve de paiement';
+
+  @override
+  String get noProof => 'Aucune preuve jointe';
+
+  @override
+  String get adjustWallet => 'Ajuster le solde';
+
+  @override
+  String get adjustAmountHint =>
+      'Montant positif pour créditer, négatif pour débiter';
+
+  @override
+  String get adjustNote => 'Motif de l\'ajustement';
+
+  @override
+  String get adjustDone => 'Solde ajusté';
+
+  @override
+  String get walletHistory => 'Historique du portefeuille';
+
+  @override
+  String get driversWallets => 'Portefeuilles des chauffeurs';
+
+  @override
+  String get referenceLabel => 'Référence';
+
+  @override
+  String get methodLabel => 'Méthode';
+
+  @override
+  String get commissionsTitle => 'Commissions';
+
+  @override
+  String get defaultRate => 'Taux par défaut';
+
+  @override
+  String get rateOverrides => 'Taux spécifiques';
+
+  @override
+  String get rateByService => 'Par service';
+
+  @override
+  String get rateByCity => 'Par ville';
+
+  @override
+  String get rateByServiceCity => 'Par service et ville';
+
+  @override
+  String get addRate => 'Ajouter un taux';
+
+  @override
+  String get rateField => 'Taux (%)';
+
+  @override
+  String get rateInvalid => 'Saisissez un taux entre 0 et 100';
+
+  @override
+  String get rateSaved => 'Taux enregistré';
+
+  @override
+  String get rateNeedsScope => 'Choisissez un service, une ville ou les deux';
+
+  @override
+  String get ratePriorityNote =>
+      'Priorité : service+ville, puis service, puis ville, puis taux par défaut.';
+
+  @override
+  String get commissionHistory => 'Historique des commissions';
+
+  @override
+  String get noCommissions => 'Aucune commission';
+
+  @override
+  String get refundedLabel => 'Remboursée';
+
+  @override
+  String get generalSettings => 'Réglages généraux';
+
+  @override
+  String get responseTimeout => 'Délai de réponse du chauffeur (min)';
+
+  @override
+  String get lowBalanceThresholdField => 'Seuil d\'alerte solde faible (MRU)';
+
+  @override
+  String get minTopupField => 'Recharge minimale (MRU)';
+
+  @override
+  String get supportPhoneField => 'Téléphone du support';
+
+  @override
+  String get supportWhatsappField => 'WhatsApp du support';
+
+  @override
+  String get topupAccountsTitle => 'Comptes de réception des recharges';
+
+  @override
+  String get accountHint => 'Numéro de compte';
+
+  @override
+  String get settingsSaved => 'Réglages enregistrés';
+
+  @override
+  String get complaintsTitle => 'Plaintes';
+
+  @override
+  String get noComplaints => 'Aucune plainte';
+
+  @override
+  String get complaintDetail => 'Détail de la plainte';
+
+  @override
+  String get complaintAuthor => 'Auteur';
+
+  @override
+  String get complaintAgainst => 'Concerné';
+
+  @override
+  String get resolutionField => 'Décision / réponse';
+
+  @override
+  String get markInReview => 'Mettre en cours';
+
+  @override
+  String get resolveComplaint => 'Marquer résolue';
+
+  @override
+  String get dismissComplaint => 'Classer sans suite';
+
+  @override
+  String get complaintUpdatedMsg => 'Plainte mise à jour';
+
+  @override
+  String get warnUser => 'Envoyer un avertissement';
+
+  @override
+  String get warnMessageHint => 'Texte de l\'avertissement';
+
+  @override
+  String get warnSentMsg => 'Avertissement envoyé';
+
+  @override
+  String get warningTitle => 'Avertissement de l\'administration';
+
+  @override
+  String get reviewsModeration => 'Modération des avis';
+
+  @override
+  String get hideReview => 'Masquer';
+
+  @override
+  String get showReview => 'Afficher';
+
+  @override
+  String get reviewHidden => 'Masqué';
+
+  @override
+  String get noReviewsAdmin => 'Aucun avis';
+
+  @override
+  String reviewFor(String name) {
+    return 'Sur le chauffeur $name';
+  }
+
+  @override
+  String get clientsTitle => 'Clients';
+
+  @override
+  String get noClients => 'Aucun client';
+
+  @override
+  String get resetPassword => 'Réinitialiser le mot de passe';
+
+  @override
+  String get newPasswordPrompt => 'Nouveau mot de passe (8 caractères min.)';
+
+  @override
+  String get passwordResetDone => 'Mot de passe réinitialisé';
+
+  @override
+  String get userDetail => 'Détail du compte';
+
+  @override
+  String get catalogTitle => 'Villes et services';
+
+  @override
+  String get citiesTitle => 'Villes';
+
+  @override
+  String get servicesTitle => 'Services';
+
+  @override
+  String get addCity => 'Ajouter une ville';
+
+  @override
+  String get editCity => 'Modifier la ville';
+
+  @override
+  String get addServiceType => 'Ajouter un service';
+
+  @override
+  String get editServiceType => 'Modifier le service';
+
+  @override
+  String get nameArField => 'Nom en arabe';
+
+  @override
+  String get nameFrField => 'Nom en français';
+
+  @override
+  String get iconField => 'Icône';
+
+  @override
+  String get activeField => 'Actif';
+
+  @override
+  String get deleteBlocked =>
+      'Suppression impossible : des données y sont liées. Désactivez-le plutôt.';
+
+  @override
+  String get deleteConfirm => 'Supprimer définitivement ?';
+
+  @override
+  String get teamTitle => 'Équipe admin';
+
+  @override
+  String get addMember => 'Ajouter un membre';
+
+  @override
+  String get roleField => 'Rôle';
+
+  @override
+  String get memberCreated => 'Compte créé';
+
+  @override
+  String get changeRole => 'Changer le rôle';
+
+  @override
+  String get roleChanged => 'Rôle modifié';
+
+  @override
+  String get roleSuperAdminDesc => 'Tous les droits';
+
+  @override
+  String get roleValidatorDesc => 'Validation des dossiers chauffeurs';
+
+  @override
+  String get roleSupportDesc => 'Réservations, recharges, plaintes, clients';
+
+  @override
+  String get auditTitle => 'Journal d\'audit';
+
+  @override
+  String get noAudit => 'Aucune opération enregistrée';
+
+  @override
+  String by(String name) {
+    return 'par $name';
+  }
+
+  @override
+  String get announcementsTitle => 'Annonces';
+
+  @override
+  String get newAnnouncement => 'Nouvelle annonce';
+
+  @override
+  String get audienceField => 'Public cible';
+
+  @override
+  String get announcementTitleField => 'Titre';
+
+  @override
+  String get announcementBodyField => 'Texte';
+
+  @override
+  String get announcementSentMsg => 'Annonce envoyée';
+
+  @override
+  String recipientsCount(String count) {
+    return '$count destinataire(s)';
+  }
+
+  @override
+  String get noAnnouncements => 'Aucune annonce';
+
+  @override
+  String get audit_approve_driver => 'Validation chauffeur';
+
+  @override
+  String get audit_reject_driver => 'Refus dossier chauffeur';
+
+  @override
+  String get audit_review_document => 'Revue de document';
+
+  @override
+  String get audit_set_driver_status => 'Statut chauffeur modifié';
+
+  @override
+  String get audit_set_account_status => 'Statut de compte modifié';
+
+  @override
+  String get audit_set_admin_role => 'Rôle admin modifié';
+
+  @override
+  String get audit_review_topup => 'Traitement de recharge';
+
+  @override
+  String get audit_adjust_wallet => 'Ajustement de solde';
+
+  @override
+  String get audit_create_booking => 'Création de demande';
+
+  @override
+  String get audit_reassign_booking => 'Changement de chauffeur';
+
+  @override
+  String get audit_cancel_booking => 'Annulation de réservation';
+
+  @override
+  String get audit_handle_complaint => 'Traitement de plainte';
+
+  @override
+  String get audit_moderate_review => 'Modération d\'avis';
+
+  @override
+  String get audit_send_announcement => 'Envoi d\'annonce';
+
+  @override
+  String get audit_reset_password => 'Réinitialisation de mot de passe';
+
+  @override
+  String get audit_create_admin => 'Création d\'admin';
+
+  @override
+  String get audit_warn_user => 'Avertissement utilisateur';
+
+  @override
+  String get audit_insert => 'Ajout';
+
+  @override
+  String get audit_update => 'Modification';
+
+  @override
+  String get audit_delete => 'Suppression';
+
+  @override
   String get phoneLabel => 'Numéro de téléphone';
 
   @override
@@ -350,6 +977,464 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get configMissingBody =>
       'SUPABASE_URL et SUPABASE_PUBLISHABLE_KEY ne sont pas définis. Lancez l\'app avec --dart-define-from-file=.env';
+
+  @override
+  String get driverBadge => 'Espace chauffeur';
+
+  @override
+  String get saved => 'Enregistré';
+
+  @override
+  String get applicationTitle => 'Dossier chauffeur';
+
+  @override
+  String get applicationIntro =>
+      'Complétez votre dossier pour validation. L\'inscription est gratuite : SAIQI prélève une commission uniquement sur chaque service accepté.';
+
+  @override
+  String get stepPersonal => 'Informations personnelles';
+
+  @override
+  String get stepDocuments => 'Documents';
+
+  @override
+  String get stepVehicle => 'Véhicule';
+
+  @override
+  String get stepServices => 'Services et tarifs';
+
+  @override
+  String get stepAvailability => 'Disponibilités';
+
+  @override
+  String get stepComplete => 'Complet';
+
+  @override
+  String get stepTodo => 'À compléter';
+
+  @override
+  String get stepOptional => 'Facultatif';
+
+  @override
+  String get submitApplication => 'Envoyer le dossier pour validation';
+
+  @override
+  String get submitApplicationConfirm =>
+      'Après l\'envoi, vous ne pourrez plus modifier le dossier avant la validation.';
+
+  @override
+  String get applicationSubmitted =>
+      'Dossier envoyé. Nous le vérifions rapidement.';
+
+  @override
+  String get applicationRejectedTitle => 'Dossier refusé';
+
+  @override
+  String get applicationRejectedHint =>
+      'Corrigez les éléments indiqués puis renvoyez le dossier.';
+
+  @override
+  String missingItems(String items) {
+    return 'Manquant : $items';
+  }
+
+  @override
+  String get yearsExperienceLabel => 'Années d\'expérience';
+
+  @override
+  String get bioLabel => 'À propos de vous';
+
+  @override
+  String get bioHint =>
+      'ex. Chauffeur professionnel, je connais bien la ville…';
+
+  @override
+  String get profilePhoto => 'Photo de profil';
+
+  @override
+  String get changePhoto => 'Changer la photo';
+
+  @override
+  String get cityOfWork => 'Ville principale';
+
+  @override
+  String get documentsIntro =>
+      'Prenez des photos nettes et lisibles de chaque document.';
+
+  @override
+  String docRejectedReason(String reason) {
+    return 'Refusé : $reason';
+  }
+
+  @override
+  String get vehicleTitle => 'Informations du véhicule';
+
+  @override
+  String get vehicleType => 'Type de véhicule';
+
+  @override
+  String get vehicleBrand => 'Marque';
+
+  @override
+  String get vehicleModel => 'Modèle';
+
+  @override
+  String get vehicleYear => 'Année';
+
+  @override
+  String get vehicleColor => 'Couleur';
+
+  @override
+  String get vehicleSeats => 'Nombre de places';
+
+  @override
+  String get vehiclePlate => 'Immatriculation';
+
+  @override
+  String get vehiclePhotos => 'Photos du véhicule';
+
+  @override
+  String get addVehiclePhoto => 'Ajouter une photo';
+
+  @override
+  String get maxPhotosReached => 'Maximum 5 photos.';
+
+  @override
+  String get servicesIntro =>
+      'Choisissez vos services, les villes desservies et le tarif de chacun.';
+
+  @override
+  String get addService => 'Ajouter un service';
+
+  @override
+  String get editService => 'Modifier le service';
+
+  @override
+  String get serviceCities => 'Villes desservies';
+
+  @override
+  String get servicePriceField => 'Prix (MRU)';
+
+  @override
+  String get priceUnitField => 'Unité de prix';
+
+  @override
+  String get serviceActive => 'Active';
+
+  @override
+  String get noServicesYet => 'Aucun service ajouté';
+
+  @override
+  String get noServicesHint =>
+      'Ajoutez au moins un service pour apparaître auprès des clients.';
+
+  @override
+  String get deleteServiceConfirm => 'Supprimer ce service ?';
+
+  @override
+  String get selectAtLeastOneCity => 'Choisissez au moins une ville';
+
+  @override
+  String get serviceAlreadyAdded => 'Ce service est déjà ajouté';
+
+  @override
+  String get availabilityIntro => 'Indiquez vos jours et horaires de travail.';
+
+  @override
+  String get dayOff => 'Repos';
+
+  @override
+  String get timeFrom => 'De';
+
+  @override
+  String get timeTo => 'À';
+
+  @override
+  String get invalidTimeRange => 'L\'heure de fin doit être après le début';
+
+  @override
+  String get pendingTitle => 'Dossier en cours de validation';
+
+  @override
+  String get pendingBody =>
+      'L\'équipe SAIQI vérifie votre dossier. Vous serez prévenu dès sa validation et cet écran se mettra à jour automatiquement.';
+
+  @override
+  String pendingSince(String date) {
+    return 'Envoyé le $date';
+  }
+
+  @override
+  String get suspendedTitle => 'Compte suspendu';
+
+  @override
+  String get suspendedBody =>
+      'Votre compte est temporairement suspendu. Contactez le support pour en savoir plus.';
+
+  @override
+  String hello(String name) {
+    return 'Bonjour, $name';
+  }
+
+  @override
+  String get availabilityOn =>
+      'Vous êtes disponible pour recevoir des demandes';
+
+  @override
+  String get availabilityOff => 'Vous êtes actuellement indisponible';
+
+  @override
+  String get availabilityToggleHint =>
+      'Activez le bouton pour recevoir de nouvelles demandes.';
+
+  @override
+  String get walletBalance => 'Solde du portefeuille';
+
+  @override
+  String get lowBalanceWarning =>
+      'Solde faible. Rechargez pour ne pas manquer de demandes.';
+
+  @override
+  String get topUp => 'Recharger';
+
+  @override
+  String get incomingRequests => 'Demandes entrantes';
+
+  @override
+  String get noIncomingRequests => 'Aucune demande pour le moment';
+
+  @override
+  String get noIncomingHint =>
+      'Les nouvelles demandes apparaîtront ici instantanément.';
+
+  @override
+  String get upcomingTrips => 'Vos prochaines courses';
+
+  @override
+  String get seeAll => 'Voir tout';
+
+  @override
+  String get requestDetails => 'Détails de la demande';
+
+  @override
+  String get commissionLabel => 'Commission';
+
+  @override
+  String get acceptRequest => 'Accepter';
+
+  @override
+  String get rejectRequest => 'Refuser';
+
+  @override
+  String commissionNotice(String amount, String rate) {
+    return 'Une commission de $amount ($rate) sera déduite de votre portefeuille à l\'acceptation.';
+  }
+
+  @override
+  String balanceAfterAccept(String amount) {
+    return 'Solde après acceptation : $amount';
+  }
+
+  @override
+  String insufficientBalanceBlock(String balance, String commission) {
+    return 'Votre solde ($balance) ne couvre pas la commission de cette demande ($commission). Rechargez votre portefeuille pour accepter.';
+  }
+
+  @override
+  String get rechargeToAccept => 'Recharger mon portefeuille';
+
+  @override
+  String get requestAccepted => 'Demande acceptée';
+
+  @override
+  String get requestRejectedMsg => 'Demande refusée';
+
+  @override
+  String get rejectConfirm => 'Voulez-vous refuser cette demande ?';
+
+  @override
+  String get requestGone => 'Cette demande n\'est plus disponible.';
+
+  @override
+  String get requestedBy => 'Demandé par';
+
+  @override
+  String get clientPaysDriver =>
+      'Le client vous paie directement (espèces ou paiement mobile).';
+
+  @override
+  String get firstAcceptWins =>
+      'Cette demande a été envoyée à plusieurs chauffeurs : le premier qui accepte l\'obtient.';
+
+  @override
+  String get myTrips => 'Mes courses';
+
+  @override
+  String get tripsUpcoming => 'À venir';
+
+  @override
+  String get tripsHistory => 'Historique';
+
+  @override
+  String get noTrips => 'Aucune course';
+
+  @override
+  String get tripDetails => 'Détails de la course';
+
+  @override
+  String get startEnRoute => 'Je suis en route';
+
+  @override
+  String get startTrip => 'Démarrer la course';
+
+  @override
+  String get finishTrip => 'Terminer la course';
+
+  @override
+  String get cancelTrip => 'Annuler la course';
+
+  @override
+  String get cancelTripConfirm =>
+      'La commission sera restituée à votre portefeuille. Annuler la course ?';
+
+  @override
+  String get tripCancelled => 'Course annulée';
+
+  @override
+  String get statusUpdated => 'Statut mis à jour';
+
+  @override
+  String get clientContact => 'Contacter le client';
+
+  @override
+  String get scheduledFor => 'Rendez-vous';
+
+  @override
+  String get agreedPrice => 'Prix';
+
+  @override
+  String get commissionDeducted => 'Commission déduite';
+
+  @override
+  String get wallet => 'Portefeuille';
+
+  @override
+  String get transactions => 'Opérations';
+
+  @override
+  String get noTransactions => 'Aucune opération';
+
+  @override
+  String get topupRequests => 'Demandes de recharge';
+
+  @override
+  String get noTopups => 'Aucune demande de recharge';
+
+  @override
+  String get requestTopup => 'Demander une recharge';
+
+  @override
+  String get topupAmount => 'Montant (MRU)';
+
+  @override
+  String get topupMethod => 'Moyen de paiement';
+
+  @override
+  String get topupReference => 'Référence de la transaction';
+
+  @override
+  String get topupProof => 'Photo de la preuve de paiement';
+
+  @override
+  String get topupSubmitted => 'Demande envoyée. Elle sera validée rapidement.';
+
+  @override
+  String get topupHowTo =>
+      'Envoyez le montant à l\'un des comptes ci-dessous puis joignez la preuve de paiement.';
+
+  @override
+  String minTopup(String amount) {
+    return 'Recharge minimale : $amount';
+  }
+
+  @override
+  String get accountNumber => 'Compte';
+
+  @override
+  String balanceAfterTx(String amount) {
+    return 'Solde : $amount';
+  }
+
+  @override
+  String get howCommissionWorks =>
+      'La commission est déduite de votre solde à chaque service accepté, et restituée en cas d\'annulation.';
+
+  @override
+  String get noAccountConfigured =>
+      'Aucun compte de paiement n\'est encore configuré.';
+
+  @override
+  String get refInPayment => 'Numéro copié';
+
+  @override
+  String get myProfile => 'Mon profil';
+
+  @override
+  String get statistics => 'Statistiques';
+
+  @override
+  String get completedTrips => 'Courses terminées';
+
+  @override
+  String get revenueGross => 'Montants encaissés';
+
+  @override
+  String get commissionsPaid => 'Commissions payées';
+
+  @override
+  String get revenueNet => 'Net';
+
+  @override
+  String get ratingLabel => 'Note';
+
+  @override
+  String get reviewsReceived => 'Avis reçus';
+
+  @override
+  String get noReviewsYet => 'Aucun avis pour le moment';
+
+  @override
+  String get publicProfile => 'Mon profil public';
+
+  @override
+  String get publicProfileHint => 'Voici ce que voient les clients.';
+
+  @override
+  String get editPersonalInfo => 'Modifier mes informations';
+
+  @override
+  String get myDocuments => 'Mes documents';
+
+  @override
+  String get helpAndReport => 'Aide et signalement';
+
+  @override
+  String get reportProblem => 'Signaler un problème';
+
+  @override
+  String get reportHint => 'Décrivez le problème en détail…';
+
+  @override
+  String get reportSent => 'Signalement envoyé. Nous reviendrons vers vous.';
+
+  @override
+  String get contactSupportCall => 'Appeler le support';
+
+  @override
+  String get contactSupportWhatsapp => 'WhatsApp du support';
+
+  @override
+  String get tapToEdit => 'Touchez pour modifier';
 
   @override
   String get bookingStatus_pending => 'En attente';
@@ -807,6 +1892,57 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get err_rate_limited =>
       'Trop de tentatives. Patientez un instant puis réessayez.';
+
+  @override
+  String get city => 'Ville';
+
+  @override
+  String get cities => 'Villes';
+
+  @override
+  String get serviceType => 'Type de service';
+
+  @override
+  String get dateAndTime => 'Date et heure';
+
+  @override
+  String get pickup => 'Lieu de départ';
+
+  @override
+  String get dropoff => 'Destination';
+
+  @override
+  String get passengers => 'Passagers';
+
+  @override
+  String get notes => 'Remarques';
+
+  @override
+  String get price => 'Prix';
+
+  @override
+  String get client => 'Client';
+
+  @override
+  String get driver => 'Chauffeur';
+
+  @override
+  String get status => 'Statut';
+
+  @override
+  String get channel => 'Canal';
+
+  @override
+  String get createdBy => 'Créé par';
+
+  @override
+  String get createdByAdmin => 'Créé par l\'admin';
+
+  @override
+  String get reason => 'Motif';
+
+  @override
+  String get reasonHint => 'Indiquez le motif';
 
   @override
   String get verified => 'Vérifié';

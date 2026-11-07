@@ -134,3 +134,67 @@ class ProfileSummary {
         createdAt: asDate(j['created_at']),
       );
 }
+
+/// Offre envoyée à un chauffeur pour une réservation (vue admin).
+class BookingOffer {
+  const BookingOffer({required this.id, required this.driverId, required this.status, this.driverName, this.driverPhone});
+  final String id;
+  final String driverId;
+  final String status;
+  final String? driverName;
+  final String? driverPhone;
+
+  factory BookingOffer.fromJson(Json j) {
+    final profile = firstJson(firstJson(j['drivers'])?['profiles']);
+    return BookingOffer(
+      id: j['id'] as String,
+      driverId: j['driver_id'] as String,
+      status: (j['status'] ?? 'pending') as String,
+      driverName: profile?['full_name'] as String?,
+      driverPhone: profile?['phone'] as String?,
+    );
+  }
+}
+
+/// Commission prélevée sur un service accepté (historique admin).
+class CommissionRecord {
+  const CommissionRecord({
+    required this.id,
+    required this.bookingId,
+    required this.rate,
+    required this.amount,
+    required this.status,
+    required this.createdAt,
+    this.driverName,
+    this.serviceNameAr,
+    this.serviceNameFr,
+  });
+  final String id;
+  final String bookingId;
+  final double rate;
+  final int amount;
+  final String status; // deducted | refunded
+  final DateTime createdAt;
+  final String? driverName;
+  final String? serviceNameAr;
+  final String? serviceNameFr;
+
+  bool get isRefunded => status == 'refunded';
+  String? serviceName(String lang) => lang == 'fr' ? serviceNameFr : serviceNameAr;
+
+  factory CommissionRecord.fromJson(Json j) {
+    final profile = firstJson(firstJson(j['drivers'])?['profiles']);
+    final service = firstJson(firstJson(j['bookings'])?['service_types']);
+    return CommissionRecord(
+      id: j['id'] as String,
+      bookingId: j['booking_id'] as String,
+      rate: asDouble(j['rate']),
+      amount: asInt(j['amount']),
+      status: (j['status'] ?? 'deducted') as String,
+      createdAt: asDateOr(j['created_at'], DateTime.now()),
+      driverName: profile?['full_name'] as String?,
+      serviceNameAr: service?['name_ar'] as String?,
+      serviceNameFr: service?['name_fr'] as String?,
+    );
+  }
+}

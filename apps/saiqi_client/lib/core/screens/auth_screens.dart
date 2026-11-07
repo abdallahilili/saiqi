@@ -124,8 +124,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             PrimaryButton(label: l.login, loading: busy, onPressed: _submit),
             if (widget.onRegister != null) ...[
               const SizedBox(height: 14),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Wrap(
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Text(l.noAccountYet),
                   TextButton(onPressed: busy ? null : widget.onRegister, child: Text(l.register)),
@@ -210,8 +211,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
             const SizedBox(height: 24),
             PrimaryButton(label: l.register, loading: busy, onPressed: _submit),
             const SizedBox(height: 14),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Text(l.alreadyHaveAccount),
                 TextButton(onPressed: busy ? null : widget.onLogin, child: Text(l.login)),

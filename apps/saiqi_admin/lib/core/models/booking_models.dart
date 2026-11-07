@@ -29,6 +29,8 @@ class Booking {
     this.serviceNameFr,
     this.cityNameAr,
     this.cityNameFr,
+    this.driverName,
+    this.driverPhone,
   });
 
   final String id;
@@ -60,6 +62,10 @@ class Booking {
   final String? cityNameAr;
   final String? cityNameFr;
 
+  /// Renseignés uniquement dans les requêtes admin (embed drivers/profiles).
+  final String? driverName;
+  final String? driverPhone;
+
   bool get createdByAdmin => createdByType == 'admin';
   String serviceName(String lang) => (lang == 'fr' ? serviceNameFr : serviceNameAr) ?? '';
   String cityName(String lang) => (lang == 'fr' ? cityNameFr : cityNameAr) ?? '';
@@ -67,9 +73,13 @@ class Booking {
   /// Colonnes + relations demandées à PostgREST (aucune colonne sensible n'est exclue : la RLS décide).
   static const select = '*, service_types(name_ar,name_fr), cities(name_ar,name_fr)';
 
+  /// Requête admin : ajoute le nom et le téléphone du chauffeur assigné.
+  static const adminSelect = '$select, drivers(profiles(full_name,phone))';
+
   factory Booking.fromJson(Json j) {
     final st = firstJson(j['service_types']);
     final city = firstJson(j['cities']);
+    final driverProfile = firstJson(firstJson(j['drivers'])?['profiles']);
     return Booking(
       id: j['id'] as String,
       clientId: j['client_id'] as String?,
@@ -97,6 +107,8 @@ class Booking {
       serviceNameFr: st?['name_fr'] as String? ?? j['service_name_fr'] as String?,
       cityNameAr: city?['name_ar'] as String? ?? j['city_name_ar'] as String?,
       cityNameFr: city?['name_fr'] as String? ?? j['city_name_fr'] as String?,
+      driverName: driverProfile?['full_name'] as String?,
+      driverPhone: driverProfile?['phone'] as String?,
     );
   }
 }
@@ -240,16 +252,21 @@ class Review {
   final String? driverName;
   final DateTime createdAt;
 
-  factory Review.fromJson(Json j) => Review(
-        id: j['id'] as String,
-        bookingId: j['booking_id'] as String?,
-        driverId: j['driver_id'] as String?,
-        rating: asInt(j['rating']),
-        comment: j['comment'] as String?,
-        reviewerName: j['reviewer_name'] as String?,
-        isHidden: (j['is_hidden'] ?? false) as bool,
-        createdAt: asDateOr(j['created_at'], DateTime.now()),
-      );
+  factory Review.fromJson(Json j) {
+    final client = firstJson(j['client']);
+    final driverProfile = firstJson(firstJson(j['drivers'])?['profiles']);
+    return Review(
+      id: j['id'] as String,
+      bookingId: j['booking_id'] as String?,
+      driverId: j['driver_id'] as String?,
+      rating: asInt(j['rating']),
+      comment: j['comment'] as String?,
+      reviewerName: j['reviewer_name'] as String? ?? client?['full_name'] as String?,
+      isHidden: (j['is_hidden'] ?? false) as bool,
+      driverName: driverProfile?['full_name'] as String?,
+      createdAt: asDateOr(j['created_at'], DateTime.now()),
+    );
+  }
 }
 
 class Complaint {

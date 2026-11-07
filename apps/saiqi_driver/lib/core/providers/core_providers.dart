@@ -9,6 +9,7 @@ import '../errors/app_exception.dart';
 import '../models/catalog_models.dart';
 import '../models/enums.dart';
 import '../notifications/push_service.dart';
+import '../repositories/admin_repository.dart';
 import '../repositories/auth_repository.dart';
 import '../repositories/booking_repository.dart';
 import '../repositories/catalog_repository.dart';
@@ -38,6 +39,7 @@ final jsonCacheProvider = Provider<JsonCache>((ref) => JsonCache(ref.watch(share
 // ---------------------------------------------------------------------------
 // Repositories
 // ---------------------------------------------------------------------------
+final adminRepositoryProvider = Provider<AdminRepository>((ref) => AdminRepository(ref.watch(supabaseProvider)));
 final authRepositoryProvider = Provider<AuthRepository>((ref) => AuthRepository(ref.watch(supabaseProvider)));
 final catalogRepositoryProvider = Provider<CatalogRepository>(
   (ref) => CatalogRepository(ref.watch(supabaseProvider), ref.watch(jsonCacheProvider)),

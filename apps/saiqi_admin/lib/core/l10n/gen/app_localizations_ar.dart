@@ -9,6 +9,632 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get adminBadge => 'تطبيق المشرف';
+
+  @override
+  String get noPermission => 'ليس لديك صلاحية لهذه الصفحة';
+
+  @override
+  String get more => 'المزيد';
+
+  @override
+  String get dashboard => 'لوحة التحكم';
+
+  @override
+  String get driversTitle => 'السائقون';
+
+  @override
+  String get bookingsTitle => 'الحجوزات';
+
+  @override
+  String get walletsTitle => 'المحافظ';
+
+  @override
+  String get kpiPendingDrivers => 'ملفات بانتظار المراجعة';
+
+  @override
+  String get kpiNewDrivers => 'سائقون جدد (7 أيام)';
+
+  @override
+  String get kpiApprovedDrivers => 'سائقون معتمدون';
+
+  @override
+  String get kpiClients => 'العملاء';
+
+  @override
+  String get kpiBookingsToday => 'حجوزات اليوم';
+
+  @override
+  String get kpiPendingBookings => 'حجوزات قيد الانتظار';
+
+  @override
+  String get kpiCommissionsToday => 'عمولات اليوم';
+
+  @override
+  String get kpiCommissionsTotal => 'إجمالي العمولات';
+
+  @override
+  String get kpiOpenComplaints => 'شكاوى مفتوحة';
+
+  @override
+  String get kpiPendingTopups => 'طلبات شحن معلقة';
+
+  @override
+  String get searchPeople => 'بحث بالاسم أو الرقم';
+
+  @override
+  String get driverDetail => 'ملف السائق';
+
+  @override
+  String get approveDriver => 'اعتماد السائق';
+
+  @override
+  String get rejectDriver => 'رفض الملف';
+
+  @override
+  String get rejectReasonTitle => 'سبب الرفض (يظهر للسائق)';
+
+  @override
+  String get driverApprovedMsg => 'تم اعتماد السائق';
+
+  @override
+  String get driverRejectedMsg => 'تم رفض الملف';
+
+  @override
+  String get suspendDriver => 'إيقاف السائق';
+
+  @override
+  String get reinstateDriver => 'إعادة تفعيل السائق';
+
+  @override
+  String get suspendReasonTitle => 'سبب الإيقاف';
+
+  @override
+  String get accountActions => 'إجراءات الحساب';
+
+  @override
+  String get suspendAccount => 'تعليق الحساب';
+
+  @override
+  String get blockAccount => 'حظر الحساب';
+
+  @override
+  String get reactivateAccount => 'إعادة تفعيل الحساب';
+
+  @override
+  String get accountStatusChanged => 'تم تحديث حالة الحساب';
+
+  @override
+  String get noDocuments => 'لم يرفع السائق مستندات بعد';
+
+  @override
+  String get noVehicle => 'لم تُسجَّل سيارة بعد';
+
+  @override
+  String get noServicesAdmin => 'لا توجد خدمات';
+
+  @override
+  String get approveDocument => 'قبول المستند';
+
+  @override
+  String get rejectDocument => 'رفض المستند';
+
+  @override
+  String get documentApprovedMsg => 'تم قبول المستند';
+
+  @override
+  String get documentRejectedMsg => 'تم رفض المستند';
+
+  @override
+  String get rejectDocReasonTitle => 'سبب رفض المستند';
+
+  @override
+  String get filterPending => 'بانتظار المراجعة';
+
+  @override
+  String documentsProgress(String count) {
+    return '$count مستند';
+  }
+
+  @override
+  String joinedOn(String date) {
+    return 'انضم في $date';
+  }
+
+  @override
+  String get driverNotFound => 'السائق غير موجود';
+
+  @override
+  String get filterStatus => 'الحالة';
+
+  @override
+  String get filterChannel => 'القناة';
+
+  @override
+  String get filterCity => 'المدينة';
+
+  @override
+  String get filterDate => 'التاريخ';
+
+  @override
+  String get clearFilters => 'مسح التصفية';
+
+  @override
+  String get bookingDetail => 'تفاصيل الحجز';
+
+  @override
+  String get noBookings => 'لا توجد حجوزات';
+
+  @override
+  String get offersSent => 'العروض المرسلة';
+
+  @override
+  String get offerStatus_pending => 'بانتظار الرد';
+
+  @override
+  String get offerStatus_accepted => 'قبل';
+
+  @override
+  String get offerStatus_declined => 'رفض';
+
+  @override
+  String get offerStatus_expired => 'منتهٍ';
+
+  @override
+  String get reassignDriver => 'تغيير السائق';
+
+  @override
+  String get reassignedMsg => 'تم إرسال الطلب للسائقين المختارين';
+
+  @override
+  String get cancelBookingAdmin => 'إلغاء الحجز';
+
+  @override
+  String get cancelReasonPrompt => 'سبب الإلغاء';
+
+  @override
+  String get bookingCancelledMsg => 'تم إلغاء الحجز';
+
+  @override
+  String get contactClient => 'اتصال بالعميل';
+
+  @override
+  String get contactDriver => 'اتصال بالسائق';
+
+  @override
+  String get guestClient => 'عميل بدون حساب';
+
+  @override
+  String get registeredClient => 'عميل مسجّل';
+
+  @override
+  String get noDriverAssigned => 'لم يُعيَّن سائق بعد';
+
+  @override
+  String get createRequest => 'إنشاء طلب';
+
+  @override
+  String get newRequest => 'طلب جديد لعميل';
+
+  @override
+  String get newRequestIntro =>
+      'أنشئ طلبًا لعميل اتصل بك أو راسلك، ثم أرسله لسائق أو لعدة سائقين.';
+
+  @override
+  String get clientNameLabel => 'اسم العميل';
+
+  @override
+  String get clientPhoneLabel => 'هاتف العميل';
+
+  @override
+  String get agreedPriceField => 'السعر المتفق عليه (أوقية)';
+
+  @override
+  String get originChannel => 'قناة الطلب';
+
+  @override
+  String get chooseDrivers => 'اختر السائقين';
+
+  @override
+  String get driversInCityHint =>
+      'السائقون المعتمدون الذين يقدمون هذه الخدمة في المدينة المختارة';
+
+  @override
+  String get onlyAvailable => 'المتاحون فقط';
+
+  @override
+  String get noDriversFound => 'لا يوجد سائقون مطابقون';
+
+  @override
+  String selectedCount(String count) {
+    return '$count محدد';
+  }
+
+  @override
+  String get selectAtLeastOneDriver => 'اختر سائقًا واحدًا على الأقل';
+
+  @override
+  String get sendRequest => 'إنشاء وإرسال الطلب';
+
+  @override
+  String get requestCreatedMsg => 'تم إنشاء الطلب وإرساله';
+
+  @override
+  String get multiDriverHint =>
+      'عند اختيار عدة سائقين، الأول الذي يقبل يحصل على الطلب.';
+
+  @override
+  String get selectAll => 'تحديد الكل';
+
+  @override
+  String get topupsTitle => 'طلبات الشحن';
+
+  @override
+  String get noTopupsAdmin => 'لا توجد طلبات شحن';
+
+  @override
+  String get approveTopup => 'قبول الشحن';
+
+  @override
+  String get rejectTopup => 'رفض الشحن';
+
+  @override
+  String get topupApprovedMsg => 'تم شحن المحفظة';
+
+  @override
+  String get topupRejectedMsg => 'تم رفض الطلب';
+
+  @override
+  String get topupNoteHint => 'ملاحظة (اختياري)';
+
+  @override
+  String get proofImage => 'إثبات الدفع';
+
+  @override
+  String get noProof => 'لا يوجد إثبات';
+
+  @override
+  String get adjustWallet => 'تعديل الرصيد يدويًا';
+
+  @override
+  String get adjustAmountHint => 'مبلغ موجب للإضافة أو سالب للخصم';
+
+  @override
+  String get adjustNote => 'سبب التعديل';
+
+  @override
+  String get adjustDone => 'تم تعديل الرصيد';
+
+  @override
+  String get walletHistory => 'سجل المحفظة';
+
+  @override
+  String get driversWallets => 'محافظ السائقين';
+
+  @override
+  String get referenceLabel => 'المرجع';
+
+  @override
+  String get methodLabel => 'الطريقة';
+
+  @override
+  String get commissionsTitle => 'العمولات';
+
+  @override
+  String get defaultRate => 'النسبة الافتراضية';
+
+  @override
+  String get rateOverrides => 'نسب مخصصة';
+
+  @override
+  String get rateByService => 'حسب الخدمة';
+
+  @override
+  String get rateByCity => 'حسب المدينة';
+
+  @override
+  String get rateByServiceCity => 'حسب الخدمة والمدينة';
+
+  @override
+  String get addRate => 'إضافة نسبة';
+
+  @override
+  String get rateField => 'النسبة (%)';
+
+  @override
+  String get rateInvalid => 'أدخل نسبة بين 0 و 100';
+
+  @override
+  String get rateSaved => 'تم حفظ النسبة';
+
+  @override
+  String get rateNeedsScope => 'اختر خدمة أو مدينة أو كليهما';
+
+  @override
+  String get ratePriorityNote =>
+      'الأولوية: خدمة+مدينة، ثم خدمة، ثم مدينة، ثم النسبة الافتراضية.';
+
+  @override
+  String get commissionHistory => 'سجل العمولات';
+
+  @override
+  String get noCommissions => 'لا توجد عمولات بعد';
+
+  @override
+  String get refundedLabel => 'مستردة';
+
+  @override
+  String get generalSettings => 'إعدادات عامة';
+
+  @override
+  String get responseTimeout => 'مهلة رد السائق (دقائق)';
+
+  @override
+  String get lowBalanceThresholdField => 'حد تنبيه الرصيد المنخفض (أوقية)';
+
+  @override
+  String get minTopupField => 'الحد الأدنى للشحن (أوقية)';
+
+  @override
+  String get supportPhoneField => 'هاتف الدعم';
+
+  @override
+  String get supportWhatsappField => 'واتساب الدعم';
+
+  @override
+  String get topupAccountsTitle => 'حسابات استلام الشحن';
+
+  @override
+  String get accountHint => 'رقم الحساب';
+
+  @override
+  String get settingsSaved => 'تم حفظ الإعدادات';
+
+  @override
+  String get complaintsTitle => 'الشكاوى';
+
+  @override
+  String get noComplaints => 'لا توجد شكاوى';
+
+  @override
+  String get complaintDetail => 'تفاصيل الشكوى';
+
+  @override
+  String get complaintAuthor => 'المُبلِّغ';
+
+  @override
+  String get complaintAgainst => 'المشكو منه';
+
+  @override
+  String get resolutionField => 'القرار / الرد';
+
+  @override
+  String get markInReview => 'قيد المعالجة';
+
+  @override
+  String get resolveComplaint => 'تمت المعالجة';
+
+  @override
+  String get dismissComplaint => 'حفظ الشكوى';
+
+  @override
+  String get complaintUpdatedMsg => 'تم تحديث الشكوى';
+
+  @override
+  String get warnUser => 'إرسال تنبيه';
+
+  @override
+  String get warnMessageHint => 'نص التنبيه';
+
+  @override
+  String get warnSentMsg => 'تم إرسال التنبيه';
+
+  @override
+  String get warningTitle => 'تنبيه من الإدارة';
+
+  @override
+  String get reviewsModeration => 'مراجعة التقييمات';
+
+  @override
+  String get hideReview => 'إخفاء';
+
+  @override
+  String get showReview => 'إظهار';
+
+  @override
+  String get reviewHidden => 'مخفي';
+
+  @override
+  String get noReviewsAdmin => 'لا توجد تقييمات';
+
+  @override
+  String reviewFor(String name) {
+    return 'عن السائق $name';
+  }
+
+  @override
+  String get clientsTitle => 'العملاء';
+
+  @override
+  String get noClients => 'لا يوجد عملاء';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get newPasswordPrompt => 'كلمة المرور الجديدة (8 أحرف على الأقل)';
+
+  @override
+  String get passwordResetDone => 'تمت إعادة تعيين كلمة المرور';
+
+  @override
+  String get userDetail => 'تفاصيل الحساب';
+
+  @override
+  String get catalogTitle => 'المدن والخدمات';
+
+  @override
+  String get citiesTitle => 'المدن';
+
+  @override
+  String get servicesTitle => 'الخدمات';
+
+  @override
+  String get addCity => 'إضافة مدينة';
+
+  @override
+  String get editCity => 'تعديل المدينة';
+
+  @override
+  String get addServiceType => 'إضافة خدمة';
+
+  @override
+  String get editServiceType => 'تعديل الخدمة';
+
+  @override
+  String get nameArField => 'الاسم بالعربية';
+
+  @override
+  String get nameFrField => 'الاسم بالفرنسية';
+
+  @override
+  String get iconField => 'الأيقونة';
+
+  @override
+  String get activeField => 'مفعّل';
+
+  @override
+  String get deleteBlocked =>
+      'تعذّر الحذف لوجود بيانات مرتبطة. عطّله بدلًا من ذلك.';
+
+  @override
+  String get deleteConfirm => 'حذف نهائي؟';
+
+  @override
+  String get teamTitle => 'فريق الإدارة';
+
+  @override
+  String get addMember => 'إضافة عضو';
+
+  @override
+  String get roleField => 'الدور';
+
+  @override
+  String get memberCreated => 'تم إنشاء الحساب';
+
+  @override
+  String get changeRole => 'تغيير الدور';
+
+  @override
+  String get roleChanged => 'تم تغيير الدور';
+
+  @override
+  String get roleSuperAdminDesc => 'كل الصلاحيات';
+
+  @override
+  String get roleValidatorDesc => 'مراجعة ملفات السائقين';
+
+  @override
+  String get roleSupportDesc => 'الحجوزات والشحن والشكاوى والعملاء';
+
+  @override
+  String get auditTitle => 'سجل التدقيق';
+
+  @override
+  String get noAudit => 'لا توجد عمليات مسجلة';
+
+  @override
+  String by(String name) {
+    return 'بواسطة $name';
+  }
+
+  @override
+  String get announcementsTitle => 'الإعلانات';
+
+  @override
+  String get newAnnouncement => 'إعلان جديد';
+
+  @override
+  String get audienceField => 'الفئة المستهدفة';
+
+  @override
+  String get announcementTitleField => 'العنوان';
+
+  @override
+  String get announcementBodyField => 'النص';
+
+  @override
+  String get announcementSentMsg => 'تم إرسال الإعلان';
+
+  @override
+  String recipientsCount(String count) {
+    return '$count مستلم';
+  }
+
+  @override
+  String get noAnnouncements => 'لا توجد إعلانات';
+
+  @override
+  String get audit_approve_driver => 'اعتماد سائق';
+
+  @override
+  String get audit_reject_driver => 'رفض ملف سائق';
+
+  @override
+  String get audit_review_document => 'مراجعة مستند';
+
+  @override
+  String get audit_set_driver_status => 'تغيير حالة سائق';
+
+  @override
+  String get audit_set_account_status => 'تغيير حالة حساب';
+
+  @override
+  String get audit_set_admin_role => 'تغيير دور مشرف';
+
+  @override
+  String get audit_review_topup => 'معالجة طلب شحن';
+
+  @override
+  String get audit_adjust_wallet => 'تعديل رصيد';
+
+  @override
+  String get audit_create_booking => 'إنشاء طلب';
+
+  @override
+  String get audit_reassign_booking => 'تغيير سائق حجز';
+
+  @override
+  String get audit_cancel_booking => 'إلغاء حجز';
+
+  @override
+  String get audit_handle_complaint => 'معالجة شكوى';
+
+  @override
+  String get audit_moderate_review => 'إدارة تقييم';
+
+  @override
+  String get audit_send_announcement => 'إرسال إعلان';
+
+  @override
+  String get audit_reset_password => 'إعادة تعيين كلمة مرور';
+
+  @override
+  String get audit_create_admin => 'إنشاء مشرف';
+
+  @override
+  String get audit_warn_user => 'تنبيه مستخدم';
+
+  @override
+  String get audit_insert => 'إضافة';
+
+  @override
+  String get audit_update => 'تعديل';
+
+  @override
+  String get audit_delete => 'حذف';
+
+  @override
   String get phoneLabel => 'رقم الهاتف';
 
   @override
@@ -346,6 +972,453 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get configMissingBody =>
       'لم يتم تحديد SUPABASE_URL و SUPABASE_PUBLISHABLE_KEY. شغّل التطبيق مع --dart-define-from-file=.env';
+
+  @override
+  String get driverBadge => 'تطبيق السائق';
+
+  @override
+  String get saved => 'تم الحفظ';
+
+  @override
+  String get applicationTitle => 'ملف السائق';
+
+  @override
+  String get applicationIntro =>
+      'أكمل ملفك ليراجعه فريقنا. التسجيل مجاني، وتُحتسب عمولة فقط على كل خدمة تقبلها.';
+
+  @override
+  String get stepPersonal => 'المعلومات الشخصية';
+
+  @override
+  String get stepDocuments => 'المستندات';
+
+  @override
+  String get stepVehicle => 'السيارة';
+
+  @override
+  String get stepServices => 'الخدمات والأسعار';
+
+  @override
+  String get stepAvailability => 'أوقات العمل';
+
+  @override
+  String get stepComplete => 'مكتمل';
+
+  @override
+  String get stepTodo => 'غير مكتمل';
+
+  @override
+  String get stepOptional => 'اختياري';
+
+  @override
+  String get submitApplication => 'إرسال الملف للمراجعة';
+
+  @override
+  String get submitApplicationConfirm =>
+      'بعد الإرسال لن تتمكن من التعديل حتى تتم المراجعة.';
+
+  @override
+  String get applicationSubmitted => 'تم إرسال ملفك. سنراجعه قريبًا.';
+
+  @override
+  String get applicationRejectedTitle => 'تم رفض ملفك';
+
+  @override
+  String get applicationRejectedHint => 'صحّح ما يلزم ثم أعد إرسال الملف.';
+
+  @override
+  String missingItems(String items) {
+    return 'ينقص: $items';
+  }
+
+  @override
+  String get yearsExperienceLabel => 'سنوات الخبرة';
+
+  @override
+  String get bioLabel => 'نبذة عنك';
+
+  @override
+  String get bioHint => 'مثال: سائق محترف أعرف المدينة جيدًا…';
+
+  @override
+  String get profilePhoto => 'الصورة الشخصية';
+
+  @override
+  String get changePhoto => 'تغيير الصورة';
+
+  @override
+  String get cityOfWork => 'مدينة العمل الرئيسية';
+
+  @override
+  String get documentsIntro => 'التقط صورًا واضحة ومقروءة لكل مستند.';
+
+  @override
+  String docRejectedReason(String reason) {
+    return 'مرفوض: $reason';
+  }
+
+  @override
+  String get vehicleTitle => 'معلومات السيارة';
+
+  @override
+  String get vehicleType => 'نوع السيارة';
+
+  @override
+  String get vehicleBrand => 'الماركة';
+
+  @override
+  String get vehicleModel => 'الطراز';
+
+  @override
+  String get vehicleYear => 'سنة الصنع';
+
+  @override
+  String get vehicleColor => 'اللون';
+
+  @override
+  String get vehicleSeats => 'عدد المقاعد';
+
+  @override
+  String get vehiclePlate => 'رقم اللوحة';
+
+  @override
+  String get vehiclePhotos => 'صور السيارة';
+
+  @override
+  String get addVehiclePhoto => 'إضافة صورة';
+
+  @override
+  String get maxPhotosReached => 'الحد الأقصى 5 صور.';
+
+  @override
+  String get servicesIntro => 'اختر الخدمات التي تقدمها ومدنها وسعر كل منها.';
+
+  @override
+  String get addService => 'إضافة خدمة';
+
+  @override
+  String get editService => 'تعديل الخدمة';
+
+  @override
+  String get serviceCities => 'المدن التي تخدمها';
+
+  @override
+  String get servicePriceField => 'السعر (أوقية)';
+
+  @override
+  String get priceUnitField => 'وحدة السعر';
+
+  @override
+  String get serviceActive => 'مفعّلة';
+
+  @override
+  String get noServicesYet => 'لم تضف أي خدمة بعد';
+
+  @override
+  String get noServicesHint => 'أضف خدمة واحدة على الأقل لتظهر للعملاء.';
+
+  @override
+  String get deleteServiceConfirm => 'حذف هذه الخدمة؟';
+
+  @override
+  String get selectAtLeastOneCity => 'اختر مدينة واحدة على الأقل';
+
+  @override
+  String get serviceAlreadyAdded => 'هذه الخدمة مضافة مسبقًا';
+
+  @override
+  String get availabilityIntro => 'حدد الأيام والساعات التي تعمل فيها.';
+
+  @override
+  String get dayOff => 'عطلة';
+
+  @override
+  String get timeFrom => 'من';
+
+  @override
+  String get timeTo => 'إلى';
+
+  @override
+  String get invalidTimeRange => 'وقت النهاية يجب أن يكون بعد البداية';
+
+  @override
+  String get pendingTitle => 'ملفك قيد المراجعة';
+
+  @override
+  String get pendingBody =>
+      'يراجع فريق سائقي ملفك. سنخبرك فور اعتماده وستنتقل الشاشة تلقائيًا.';
+
+  @override
+  String pendingSince(String date) {
+    return 'أُرسل في $date';
+  }
+
+  @override
+  String get suspendedTitle => 'حسابك موقوف';
+
+  @override
+  String get suspendedBody =>
+      'تم تعليق حسابك مؤقتًا. تواصل مع الدعم لمعرفة التفاصيل.';
+
+  @override
+  String hello(String name) {
+    return 'مرحبًا، $name';
+  }
+
+  @override
+  String get availabilityOn => 'أنت متاح لاستقبال الطلبات';
+
+  @override
+  String get availabilityOff => 'أنت غير متاح حاليًا';
+
+  @override
+  String get availabilityToggleHint => 'فعّل الزر لتصلك الطلبات الجديدة.';
+
+  @override
+  String get walletBalance => 'رصيد المحفظة';
+
+  @override
+  String get lowBalanceWarning =>
+      'رصيدك منخفض. اشحن محفظتك حتى لا تفوتك الطلبات.';
+
+  @override
+  String get topUp => 'شحن المحفظة';
+
+  @override
+  String get incomingRequests => 'الطلبات الواردة';
+
+  @override
+  String get noIncomingRequests => 'لا توجد طلبات حاليًا';
+
+  @override
+  String get noIncomingHint => 'ستظهر الطلبات الجديدة هنا فورًا.';
+
+  @override
+  String get upcomingTrips => 'رحلاتك القادمة';
+
+  @override
+  String get seeAll => 'عرض الكل';
+
+  @override
+  String get requestDetails => 'تفاصيل الطلب';
+
+  @override
+  String get commissionLabel => 'العمولة';
+
+  @override
+  String get acceptRequest => 'قبول الطلب';
+
+  @override
+  String get rejectRequest => 'رفض';
+
+  @override
+  String commissionNotice(String amount, String rate) {
+    return 'ستُخصم عمولة $amount ($rate) من محفظتك عند القبول.';
+  }
+
+  @override
+  String balanceAfterAccept(String amount) {
+    return 'رصيدك بعد القبول: $amount';
+  }
+
+  @override
+  String insufficientBalanceBlock(String balance, String commission) {
+    return 'رصيدك ($balance) لا يكفي لعمولة هذا الطلب ($commission). اشحن محفظتك لتتمكن من القبول.';
+  }
+
+  @override
+  String get rechargeToAccept => 'شحن المحفظة';
+
+  @override
+  String get requestAccepted => 'تم قبول الطلب';
+
+  @override
+  String get requestRejectedMsg => 'تم رفض الطلب';
+
+  @override
+  String get rejectConfirm => 'هل تريد رفض هذا الطلب؟';
+
+  @override
+  String get requestGone => 'لم يعد هذا الطلب متاحًا.';
+
+  @override
+  String get requestedBy => 'طلب من';
+
+  @override
+  String get clientPaysDriver =>
+      'يدفع العميل المبلغ للسائق مباشرة (نقدًا أو دفع هاتفي).';
+
+  @override
+  String get firstAcceptWins =>
+      'أُرسل هذا الطلب لعدة سائقين، والأول الذي يقبل يحصل عليه.';
+
+  @override
+  String get myTrips => 'رحلاتي';
+
+  @override
+  String get tripsUpcoming => 'القادمة';
+
+  @override
+  String get tripsHistory => 'السابقة';
+
+  @override
+  String get noTrips => 'لا توجد رحلات';
+
+  @override
+  String get tripDetails => 'تفاصيل الرحلة';
+
+  @override
+  String get startEnRoute => 'أنا في الطريق';
+
+  @override
+  String get startTrip => 'بدء الرحلة';
+
+  @override
+  String get finishTrip => 'إنهاء الرحلة';
+
+  @override
+  String get cancelTrip => 'إلغاء الرحلة';
+
+  @override
+  String get cancelTripConfirm => 'ستُرجع العمولة إلى محفظتك. هل تريد الإلغاء؟';
+
+  @override
+  String get tripCancelled => 'تم إلغاء الرحلة';
+
+  @override
+  String get statusUpdated => 'تم تحديث الحالة';
+
+  @override
+  String get clientContact => 'التواصل مع العميل';
+
+  @override
+  String get scheduledFor => 'الموعد';
+
+  @override
+  String get agreedPrice => 'السعر';
+
+  @override
+  String get commissionDeducted => 'العمولة المخصومة';
+
+  @override
+  String get wallet => 'المحفظة';
+
+  @override
+  String get transactions => 'العمليات';
+
+  @override
+  String get noTransactions => 'لا توجد عمليات بعد';
+
+  @override
+  String get topupRequests => 'طلبات الشحن';
+
+  @override
+  String get noTopups => 'لا توجد طلبات شحن';
+
+  @override
+  String get requestTopup => 'طلب شحن';
+
+  @override
+  String get topupAmount => 'المبلغ (أوقية)';
+
+  @override
+  String get topupMethod => 'طريقة الدفع';
+
+  @override
+  String get topupReference => 'رقم العملية / المرجع';
+
+  @override
+  String get topupProof => 'صورة إثبات التحويل';
+
+  @override
+  String get topupSubmitted => 'تم إرسال طلب الشحن. سيُعتمد قريبًا.';
+
+  @override
+  String get topupHowTo =>
+      'أرسل المبلغ إلى أحد الحسابات التالية ثم أرفق إثبات التحويل.';
+
+  @override
+  String minTopup(String amount) {
+    return 'الحد الأدنى للشحن: $amount';
+  }
+
+  @override
+  String get accountNumber => 'الحساب';
+
+  @override
+  String balanceAfterTx(String amount) {
+    return 'الرصيد: $amount';
+  }
+
+  @override
+  String get howCommissionWorks =>
+      'تُخصم العمولة من رصيدك عند قبول كل خدمة، وتُسترجع إذا أُلغيت.';
+
+  @override
+  String get noAccountConfigured => 'لم يحدد المشرف حسابات الدفع بعد.';
+
+  @override
+  String get refInPayment => 'رقم الحساب منسوخ';
+
+  @override
+  String get myProfile => 'ملفي';
+
+  @override
+  String get statistics => 'الإحصاءات';
+
+  @override
+  String get completedTrips => 'رحلات منجزة';
+
+  @override
+  String get revenueGross => 'المبالغ المحصّلة';
+
+  @override
+  String get commissionsPaid => 'العمولات المدفوعة';
+
+  @override
+  String get revenueNet => 'الصافي';
+
+  @override
+  String get ratingLabel => 'التقييم';
+
+  @override
+  String get reviewsReceived => 'التقييمات المستلمة';
+
+  @override
+  String get noReviewsYet => 'لا توجد تقييمات بعد';
+
+  @override
+  String get publicProfile => 'ملفي العام';
+
+  @override
+  String get publicProfileHint => 'هذا ما يراه العملاء عنك.';
+
+  @override
+  String get editPersonalInfo => 'تعديل المعلومات';
+
+  @override
+  String get myDocuments => 'مستنداتي';
+
+  @override
+  String get helpAndReport => 'المساعدة والإبلاغ';
+
+  @override
+  String get reportProblem => 'الإبلاغ عن مشكلة';
+
+  @override
+  String get reportHint => 'صِف المشكلة بالتفصيل…';
+
+  @override
+  String get reportSent => 'تم إرسال بلاغك. سنتواصل معك.';
+
+  @override
+  String get contactSupportCall => 'اتصال بالدعم';
+
+  @override
+  String get contactSupportWhatsapp => 'واتساب الدعم';
+
+  @override
+  String get tapToEdit => 'اضغط للتعديل';
 
   @override
   String get bookingStatus_pending => 'قيد الانتظار';
@@ -783,6 +1856,57 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get err_rate_limited => 'محاولات كثيرة. انتظر قليلًا ثم حاول مجددًا.';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get cities => 'المدن';
+
+  @override
+  String get serviceType => 'نوع الخدمة';
+
+  @override
+  String get dateAndTime => 'التاريخ والوقت';
+
+  @override
+  String get pickup => 'مكان الانطلاق';
+
+  @override
+  String get dropoff => 'الوجهة';
+
+  @override
+  String get passengers => 'عدد الركاب';
+
+  @override
+  String get notes => 'ملاحظات';
+
+  @override
+  String get price => 'السعر';
+
+  @override
+  String get client => 'العميل';
+
+  @override
+  String get driver => 'السائق';
+
+  @override
+  String get status => 'الحالة';
+
+  @override
+  String get channel => 'القناة';
+
+  @override
+  String get createdBy => 'أنشأه';
+
+  @override
+  String get createdByAdmin => 'أنشأه المشرف';
+
+  @override
+  String get reason => 'السبب';
+
+  @override
+  String get reasonHint => 'اكتب السبب';
 
   @override
   String get verified => 'موثّق';
