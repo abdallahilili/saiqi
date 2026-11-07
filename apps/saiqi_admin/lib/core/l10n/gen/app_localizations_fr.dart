@@ -744,6 +744,249 @@ class AppLocalizationsFr extends AppLocalizations {
   String get roleAdmin => 'Administrateur';
 
   @override
+  String get clientBadge => 'Espace client';
+
+  @override
+  String get findDriverTitle => 'Trouvez votre chauffeur';
+
+  @override
+  String get findDriverSubtitle =>
+      'Des chauffeurs vérifiés dans votre ville, à tarifs clairs';
+
+  @override
+  String get chooseCity => 'Choisissez votre ville';
+
+  @override
+  String get whatDoYouNeed => 'De quoi avez-vous besoin ?';
+
+  @override
+  String get searchDrivers => 'Voir les chauffeurs';
+
+  @override
+  String get noServiceTypes => 'Aucun service disponible pour le moment';
+
+  @override
+  String driversFoundCount(String count) {
+    return '$count chauffeur(s)';
+  }
+
+  @override
+  String get noDriversHint =>
+      'Essayez d\'élargir les filtres, de changer de ville ou d\'afficher les indisponibles.';
+
+  @override
+  String get driversListTitle => 'Chauffeurs';
+
+  @override
+  String get priceRangeLabel => 'Fourchette de prix (MRU)';
+
+  @override
+  String get minPriceField => 'Min';
+
+  @override
+  String get maxPriceField => 'Max';
+
+  @override
+  String get minRatingLabel => 'Note minimale';
+
+  @override
+  String get minSeatsLabel => 'Places minimum';
+
+  @override
+  String get anyValue => 'Tous';
+
+  @override
+  String get showUnavailable => 'Afficher aussi les indisponibles';
+
+  @override
+  String activeFilters(String count) {
+    return '$count filtre(s) actif(s)';
+  }
+
+  @override
+  String get aboutDriver => 'À propos';
+
+  @override
+  String get tariffs => 'Tarifs';
+
+  @override
+  String get noTariffs => 'Aucun tarif publié';
+
+  @override
+  String get reviewsTitle => 'Avis';
+
+  @override
+  String get noReviewsClient => 'Aucun avis pour le moment';
+
+  @override
+  String get bookNow => 'Réserver';
+
+  @override
+  String get addFavorite => 'Ajouter aux favoris';
+
+  @override
+  String get removeFavorite => 'Retirer des favoris';
+
+  @override
+  String get favoriteAdded => 'Ajouté aux favoris';
+
+  @override
+  String get favoriteRemoved => 'Retiré des favoris';
+
+  @override
+  String get servesCities => 'Villes';
+
+  @override
+  String get tripsDone => 'courses réalisées';
+
+  @override
+  String get driverNotFoundClient => 'Ce chauffeur n\'est plus disponible';
+
+  @override
+  String get bookingRequestTitle => 'Demande de réservation';
+
+  @override
+  String get estimatedPrice => 'Prix estimé';
+
+  @override
+  String get payDriverDirectly =>
+      'Vous payez directement le chauffeur (espèces ou paiement mobile). L\'application ne reçoit aucun paiement.';
+
+  @override
+  String get submitBooking => 'Envoyer la demande';
+
+  @override
+  String get bookingSentMsg => 'Votre demande a été envoyée au chauffeur';
+
+  @override
+  String get pickupHint => 'ex. Aéroport, Tevragh Zeina…';
+
+  @override
+  String get serviceNotInCity => 'Ce chauffeur ne dessert pas cette ville';
+
+  @override
+  String maxPassengersHint(String count) {
+    return 'Jusqu\'à $count passager(s)';
+  }
+
+  @override
+  String get completeNameFirst =>
+      'Ajoutez votre nom pour que le chauffeur vous identifie';
+
+  @override
+  String get myBookings => 'Mes réservations';
+
+  @override
+  String get bookingsActive => 'En cours';
+
+  @override
+  String get bookingsPast => 'Passées';
+
+  @override
+  String get noBookingsClient => 'Aucune réservation pour l\'instant';
+
+  @override
+  String get noBookingsClientHint =>
+      'Trouvez un chauffeur et envoyez votre première demande.';
+
+  @override
+  String get trackBooking => 'Suivi de la réservation';
+
+  @override
+  String get waitingDriverTitle => 'En attente de la réponse du chauffeur';
+
+  @override
+  String get waitingDriverHint =>
+      'Nous vous prévenons dès sa réponse. Sans réponse dans le délai, la demande expire.';
+
+  @override
+  String get yourDriver => 'Votre chauffeur';
+
+  @override
+  String get contactDriverTitle => 'Contacter le chauffeur';
+
+  @override
+  String get contactAfterAccept =>
+      'Le numéro du chauffeur apparaît après acceptation.';
+
+  @override
+  String get cancelBooking => 'Annuler la réservation';
+
+  @override
+  String get cancelBookingConfirm => 'Voulez-vous annuler cette réservation ?';
+
+  @override
+  String get cancelUnavailableEnRoute =>
+      'L\'annulation n\'est plus possible une fois le chauffeur en route.';
+
+  @override
+  String get bookingCancelledClient => 'Réservation annulée';
+
+  @override
+  String get suggestOthers => 'Autres chauffeurs suggérés';
+
+  @override
+  String get bookingRejectedHint =>
+      'Le chauffeur a refusé. Choisissez-en un autre :';
+
+  @override
+  String get bookingExpiredHint =>
+      'Délai écoulé sans réponse. Essayez un autre chauffeur :';
+
+  @override
+  String get noAlternatives => 'Aucun chauffeur alternatif pour le moment';
+
+  @override
+  String get rateDriver => 'Évaluer le chauffeur';
+
+  @override
+  String get ratingCommentHint => 'Votre commentaire (facultatif)';
+
+  @override
+  String get submitReview => 'Envoyer l\'avis';
+
+  @override
+  String get reviewThanks => 'Merci pour votre avis';
+
+  @override
+  String get yourReview => 'Votre avis';
+
+  @override
+  String get tapStarToRate => 'Touchez une étoile pour noter';
+
+  @override
+  String get fileComplaint => 'Déposer une plainte';
+
+  @override
+  String get complaintHint => 'Expliquez le problème…';
+
+  @override
+  String get complaintSentMsg => 'Plainte envoyée, nous l\'examinons';
+
+  @override
+  String get favoritesTitle => 'Favoris';
+
+  @override
+  String get noFavorites => 'Aucun chauffeur favori';
+
+  @override
+  String get noFavoritesHint =>
+      'Touchez le cœur sur la fiche d\'un chauffeur pour le retrouver ici.';
+
+  @override
+  String get myAccount => 'Mon compte';
+
+  @override
+  String get editName => 'Nom';
+
+  @override
+  String get nameHelp =>
+      'Votre nom est visible du chauffeur lors d\'une réservation';
+
+  @override
+  String get helpClient => 'Aide et support';
+
+  @override
   String get appName => 'SAIQI';
 
   @override

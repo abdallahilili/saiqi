@@ -739,6 +739,240 @@ class AppLocalizationsAr extends AppLocalizations {
   String get roleAdmin => 'مشرف';
 
   @override
+  String get clientBadge => 'تطبيق العميل';
+
+  @override
+  String get findDriverTitle => 'ابحث عن سائقك';
+
+  @override
+  String get findDriverSubtitle => 'سائقون موثّقون في مدينتك، بأسعار واضحة';
+
+  @override
+  String get chooseCity => 'اختر مدينتك';
+
+  @override
+  String get whatDoYouNeed => 'ماذا تحتاج؟';
+
+  @override
+  String get searchDrivers => 'عرض السائقين';
+
+  @override
+  String get noServiceTypes => 'لا توجد خدمات متاحة حاليًا';
+
+  @override
+  String driversFoundCount(String count) {
+    return '$count سائق';
+  }
+
+  @override
+  String get noDriversHint =>
+      'جرّب تغيير الفلاتر أو المدينة أو إظهار غير المتاحين.';
+
+  @override
+  String get driversListTitle => 'السائقون';
+
+  @override
+  String get priceRangeLabel => 'نطاق السعر (أوقية)';
+
+  @override
+  String get minPriceField => 'الأدنى';
+
+  @override
+  String get maxPriceField => 'الأقصى';
+
+  @override
+  String get minRatingLabel => 'التقييم الأدنى';
+
+  @override
+  String get minSeatsLabel => 'عدد المقاعد الأدنى';
+
+  @override
+  String get anyValue => 'أي';
+
+  @override
+  String get showUnavailable => 'إظهار غير المتاحين أيضًا';
+
+  @override
+  String activeFilters(String count) {
+    return '$count فلتر نشط';
+  }
+
+  @override
+  String get aboutDriver => 'نبذة';
+
+  @override
+  String get tariffs => 'الأسعار';
+
+  @override
+  String get noTariffs => 'لا توجد أسعار منشورة';
+
+  @override
+  String get reviewsTitle => 'التقييمات';
+
+  @override
+  String get noReviewsClient => 'لا توجد تقييمات بعد';
+
+  @override
+  String get bookNow => 'احجز الآن';
+
+  @override
+  String get addFavorite => 'أضف إلى المفضلة';
+
+  @override
+  String get removeFavorite => 'إزالة من المفضلة';
+
+  @override
+  String get favoriteAdded => 'أُضيف إلى المفضلة';
+
+  @override
+  String get favoriteRemoved => 'أُزيل من المفضلة';
+
+  @override
+  String get servesCities => 'المدن';
+
+  @override
+  String get tripsDone => 'رحلات منجزة';
+
+  @override
+  String get driverNotFoundClient => 'هذا السائق غير متاح حاليًا';
+
+  @override
+  String get bookingRequestTitle => 'طلب حجز';
+
+  @override
+  String get estimatedPrice => 'السعر التقديري';
+
+  @override
+  String get payDriverDirectly =>
+      'تدفع المبلغ للسائق مباشرة (نقدًا أو دفع هاتفي). التطبيق لا يستلم أي مبلغ.';
+
+  @override
+  String get submitBooking => 'إرسال الطلب';
+
+  @override
+  String get bookingSentMsg => 'تم إرسال طلبك إلى السائق';
+
+  @override
+  String get pickupHint => 'مثال: المطار، تفرغ زينة…';
+
+  @override
+  String get serviceNotInCity => 'هذا السائق لا يخدم هذه المدينة';
+
+  @override
+  String maxPassengersHint(String count) {
+    return 'حتى $count راكب';
+  }
+
+  @override
+  String get completeNameFirst => 'أضف اسمك ليعرفك السائق';
+
+  @override
+  String get myBookings => 'حجوزاتي';
+
+  @override
+  String get bookingsActive => 'الحالية';
+
+  @override
+  String get bookingsPast => 'السابقة';
+
+  @override
+  String get noBookingsClient => 'لا توجد حجوزات بعد';
+
+  @override
+  String get noBookingsClientHint => 'ابحث عن سائق وأرسل أول طلب.';
+
+  @override
+  String get trackBooking => 'تتبع الحجز';
+
+  @override
+  String get waitingDriverTitle => 'بانتظار رد السائق';
+
+  @override
+  String get waitingDriverHint =>
+      'سنُعلمك فور الرد. إن لم يرد في الوقت المحدد ستنتهي المهلة.';
+
+  @override
+  String get yourDriver => 'سائقك';
+
+  @override
+  String get contactDriverTitle => 'التواصل مع السائق';
+
+  @override
+  String get contactAfterAccept => 'يظهر رقم السائق بعد قبول الطلب.';
+
+  @override
+  String get cancelBooking => 'إلغاء الحجز';
+
+  @override
+  String get cancelBookingConfirm => 'هل تريد إلغاء هذا الحجز؟';
+
+  @override
+  String get cancelUnavailableEnRoute => 'لا يمكن الإلغاء بعد انطلاق السائق.';
+
+  @override
+  String get bookingCancelledClient => 'تم إلغاء الحجز';
+
+  @override
+  String get suggestOthers => 'سائقون آخرون مقترحون';
+
+  @override
+  String get bookingRejectedHint => 'رفض السائق طلبك. اختر سائقًا آخر:';
+
+  @override
+  String get bookingExpiredHint => 'انتهت المهلة دون رد. جرّب سائقًا آخر:';
+
+  @override
+  String get noAlternatives => 'لا يوجد سائقون بديلون الآن';
+
+  @override
+  String get rateDriver => 'قيّم السائق';
+
+  @override
+  String get ratingCommentHint => 'اكتب تعليقك (اختياري)';
+
+  @override
+  String get submitReview => 'إرسال التقييم';
+
+  @override
+  String get reviewThanks => 'شكرًا على تقييمك';
+
+  @override
+  String get yourReview => 'تقييمك';
+
+  @override
+  String get tapStarToRate => 'اضغط على نجمة للتقييم';
+
+  @override
+  String get fileComplaint => 'تقديم شكوى';
+
+  @override
+  String get complaintHint => 'اشرح المشكلة…';
+
+  @override
+  String get complaintSentMsg => 'تم إرسال شكواك وسنراجعها';
+
+  @override
+  String get favoritesTitle => 'المفضلة';
+
+  @override
+  String get noFavorites => 'لا يوجد سائقون مفضلون';
+
+  @override
+  String get noFavoritesHint => 'اضغط على القلب في ملف أي سائق لحفظه هنا.';
+
+  @override
+  String get myAccount => 'حسابي';
+
+  @override
+  String get editName => 'الاسم';
+
+  @override
+  String get nameHelp => 'يظهر اسمك للسائق عند الحجز';
+
+  @override
+  String get helpClient => 'المساعدة والدعم';
+
+  @override
   String get appName => 'سائقي';
 
   @override

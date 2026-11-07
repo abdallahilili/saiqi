@@ -1520,6 +1520,456 @@ abstract class AppLocalizations {
   /// **'مشرف'**
   String get roleAdmin;
 
+  /// No description provided for @clientBadge.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق العميل'**
+  String get clientBadge;
+
+  /// No description provided for @findDriverTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن سائقك'**
+  String get findDriverTitle;
+
+  /// No description provided for @findDriverSubtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'سائقون موثّقون في مدينتك، بأسعار واضحة'**
+  String get findDriverSubtitle;
+
+  /// No description provided for @chooseCity.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر مدينتك'**
+  String get chooseCity;
+
+  /// No description provided for @whatDoYouNeed.
+  ///
+  /// In ar, this message translates to:
+  /// **'ماذا تحتاج؟'**
+  String get whatDoYouNeed;
+
+  /// No description provided for @searchDrivers.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض السائقين'**
+  String get searchDrivers;
+
+  /// No description provided for @noServiceTypes.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد خدمات متاحة حاليًا'**
+  String get noServiceTypes;
+
+  /// No description provided for @driversFoundCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count} سائق'**
+  String driversFoundCount(String count);
+
+  /// No description provided for @noDriversHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'جرّب تغيير الفلاتر أو المدينة أو إظهار غير المتاحين.'**
+  String get noDriversHint;
+
+  /// No description provided for @driversListTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'السائقون'**
+  String get driversListTitle;
+
+  /// No description provided for @priceRangeLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'نطاق السعر (أوقية)'**
+  String get priceRangeLabel;
+
+  /// No description provided for @minPriceField.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأدنى'**
+  String get minPriceField;
+
+  /// No description provided for @maxPriceField.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأقصى'**
+  String get maxPriceField;
+
+  /// No description provided for @minRatingLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'التقييم الأدنى'**
+  String get minRatingLabel;
+
+  /// No description provided for @minSeatsLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد المقاعد الأدنى'**
+  String get minSeatsLabel;
+
+  /// No description provided for @anyValue.
+  ///
+  /// In ar, this message translates to:
+  /// **'أي'**
+  String get anyValue;
+
+  /// No description provided for @showUnavailable.
+  ///
+  /// In ar, this message translates to:
+  /// **'إظهار غير المتاحين أيضًا'**
+  String get showUnavailable;
+
+  /// No description provided for @activeFilters.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count} فلتر نشط'**
+  String activeFilters(String count);
+
+  /// No description provided for @aboutDriver.
+  ///
+  /// In ar, this message translates to:
+  /// **'نبذة'**
+  String get aboutDriver;
+
+  /// No description provided for @tariffs.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأسعار'**
+  String get tariffs;
+
+  /// No description provided for @noTariffs.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد أسعار منشورة'**
+  String get noTariffs;
+
+  /// No description provided for @reviewsTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'التقييمات'**
+  String get reviewsTitle;
+
+  /// No description provided for @noReviewsClient.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد تقييمات بعد'**
+  String get noReviewsClient;
+
+  /// No description provided for @bookNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'احجز الآن'**
+  String get bookNow;
+
+  /// No description provided for @addFavorite.
+  ///
+  /// In ar, this message translates to:
+  /// **'أضف إلى المفضلة'**
+  String get addFavorite;
+
+  /// No description provided for @removeFavorite.
+  ///
+  /// In ar, this message translates to:
+  /// **'إزالة من المفضلة'**
+  String get removeFavorite;
+
+  /// No description provided for @favoriteAdded.
+  ///
+  /// In ar, this message translates to:
+  /// **'أُضيف إلى المفضلة'**
+  String get favoriteAdded;
+
+  /// No description provided for @favoriteRemoved.
+  ///
+  /// In ar, this message translates to:
+  /// **'أُزيل من المفضلة'**
+  String get favoriteRemoved;
+
+  /// No description provided for @servesCities.
+  ///
+  /// In ar, this message translates to:
+  /// **'المدن'**
+  String get servesCities;
+
+  /// No description provided for @tripsDone.
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلات منجزة'**
+  String get tripsDone;
+
+  /// No description provided for @driverNotFoundClient.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا السائق غير متاح حاليًا'**
+  String get driverNotFoundClient;
+
+  /// No description provided for @bookingRequestTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'طلب حجز'**
+  String get bookingRequestTitle;
+
+  /// No description provided for @estimatedPrice.
+  ///
+  /// In ar, this message translates to:
+  /// **'السعر التقديري'**
+  String get estimatedPrice;
+
+  /// No description provided for @payDriverDirectly.
+  ///
+  /// In ar, this message translates to:
+  /// **'تدفع المبلغ للسائق مباشرة (نقدًا أو دفع هاتفي). التطبيق لا يستلم أي مبلغ.'**
+  String get payDriverDirectly;
+
+  /// No description provided for @submitBooking.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال الطلب'**
+  String get submitBooking;
+
+  /// No description provided for @bookingSentMsg.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال طلبك إلى السائق'**
+  String get bookingSentMsg;
+
+  /// No description provided for @pickupHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'مثال: المطار، تفرغ زينة…'**
+  String get pickupHint;
+
+  /// No description provided for @serviceNotInCity.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا السائق لا يخدم هذه المدينة'**
+  String get serviceNotInCity;
+
+  /// No description provided for @maxPassengersHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'حتى {count} راكب'**
+  String maxPassengersHint(String count);
+
+  /// No description provided for @completeNameFirst.
+  ///
+  /// In ar, this message translates to:
+  /// **'أضف اسمك ليعرفك السائق'**
+  String get completeNameFirst;
+
+  /// No description provided for @myBookings.
+  ///
+  /// In ar, this message translates to:
+  /// **'حجوزاتي'**
+  String get myBookings;
+
+  /// No description provided for @bookingsActive.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحالية'**
+  String get bookingsActive;
+
+  /// No description provided for @bookingsPast.
+  ///
+  /// In ar, this message translates to:
+  /// **'السابقة'**
+  String get bookingsPast;
+
+  /// No description provided for @noBookingsClient.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد حجوزات بعد'**
+  String get noBookingsClient;
+
+  /// No description provided for @noBookingsClientHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن سائق وأرسل أول طلب.'**
+  String get noBookingsClientHint;
+
+  /// No description provided for @trackBooking.
+  ///
+  /// In ar, this message translates to:
+  /// **'تتبع الحجز'**
+  String get trackBooking;
+
+  /// No description provided for @waitingDriverTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'بانتظار رد السائق'**
+  String get waitingDriverTitle;
+
+  /// No description provided for @waitingDriverHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'سنُعلمك فور الرد. إن لم يرد في الوقت المحدد ستنتهي المهلة.'**
+  String get waitingDriverHint;
+
+  /// No description provided for @yourDriver.
+  ///
+  /// In ar, this message translates to:
+  /// **'سائقك'**
+  String get yourDriver;
+
+  /// No description provided for @contactDriverTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'التواصل مع السائق'**
+  String get contactDriverTitle;
+
+  /// No description provided for @contactAfterAccept.
+  ///
+  /// In ar, this message translates to:
+  /// **'يظهر رقم السائق بعد قبول الطلب.'**
+  String get contactAfterAccept;
+
+  /// No description provided for @cancelBooking.
+  ///
+  /// In ar, this message translates to:
+  /// **'إلغاء الحجز'**
+  String get cancelBooking;
+
+  /// No description provided for @cancelBookingConfirm.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل تريد إلغاء هذا الحجز؟'**
+  String get cancelBookingConfirm;
+
+  /// No description provided for @cancelUnavailableEnRoute.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يمكن الإلغاء بعد انطلاق السائق.'**
+  String get cancelUnavailableEnRoute;
+
+  /// No description provided for @bookingCancelledClient.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إلغاء الحجز'**
+  String get bookingCancelledClient;
+
+  /// No description provided for @suggestOthers.
+  ///
+  /// In ar, this message translates to:
+  /// **'سائقون آخرون مقترحون'**
+  String get suggestOthers;
+
+  /// No description provided for @bookingRejectedHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'رفض السائق طلبك. اختر سائقًا آخر:'**
+  String get bookingRejectedHint;
+
+  /// No description provided for @bookingExpiredHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهت المهلة دون رد. جرّب سائقًا آخر:'**
+  String get bookingExpiredHint;
+
+  /// No description provided for @noAlternatives.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد سائقون بديلون الآن'**
+  String get noAlternatives;
+
+  /// No description provided for @rateDriver.
+  ///
+  /// In ar, this message translates to:
+  /// **'قيّم السائق'**
+  String get rateDriver;
+
+  /// No description provided for @ratingCommentHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب تعليقك (اختياري)'**
+  String get ratingCommentHint;
+
+  /// No description provided for @submitReview.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال التقييم'**
+  String get submitReview;
+
+  /// No description provided for @reviewThanks.
+  ///
+  /// In ar, this message translates to:
+  /// **'شكرًا على تقييمك'**
+  String get reviewThanks;
+
+  /// No description provided for @yourReview.
+  ///
+  /// In ar, this message translates to:
+  /// **'تقييمك'**
+  String get yourReview;
+
+  /// No description provided for @tapStarToRate.
+  ///
+  /// In ar, this message translates to:
+  /// **'اضغط على نجمة للتقييم'**
+  String get tapStarToRate;
+
+  /// No description provided for @fileComplaint.
+  ///
+  /// In ar, this message translates to:
+  /// **'تقديم شكوى'**
+  String get fileComplaint;
+
+  /// No description provided for @complaintHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اشرح المشكلة…'**
+  String get complaintHint;
+
+  /// No description provided for @complaintSentMsg.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال شكواك وسنراجعها'**
+  String get complaintSentMsg;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'المفضلة'**
+  String get favoritesTitle;
+
+  /// No description provided for @noFavorites.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد سائقون مفضلون'**
+  String get noFavorites;
+
+  /// No description provided for @noFavoritesHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اضغط على القلب في ملف أي سائق لحفظه هنا.'**
+  String get noFavoritesHint;
+
+  /// No description provided for @myAccount.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسابي'**
+  String get myAccount;
+
+  /// No description provided for @editName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم'**
+  String get editName;
+
+  /// No description provided for @nameHelp.
+  ///
+  /// In ar, this message translates to:
+  /// **'يظهر اسمك للسائق عند الحجز'**
+  String get nameHelp;
+
+  /// No description provided for @helpClient.
+  ///
+  /// In ar, this message translates to:
+  /// **'المساعدة والدعم'**
+  String get helpClient;
+
   /// No description provided for @appName.
   ///
   /// In ar, this message translates to:
