@@ -22,6 +22,9 @@ export default {
 
   // Chauffeurs
   searchPeople: ['بحث بالاسم أو الرقم', 'Rechercher un nom ou un numéro'],
+  addDriver: ['إضافة سائق', 'Ajouter un chauffeur'],
+  addDriverIntro: ['يُنشأ الحساب بحالة مسودة؛ يكمل السائق ملفه ثم يقدّمه للمراجعة.', 'Le compte est créé en brouillon ; le chauffeur complète son dossier puis le soumet.'],
+  driverCreatedMsg: ['تم إنشاء حساب السائق', 'Compte chauffeur créé'],
   driverDetail: ['ملف السائق', 'Dossier chauffeur'],
   approveDriver: ['اعتماد السائق', 'Valider le chauffeur'],
   rejectDriver: ['رفض الملف', 'Refuser le dossier'],
@@ -222,6 +225,7 @@ export default {
   audit_send_announcement: ['إرسال إعلان', 'Envoi d\'annonce'],
   audit_reset_password: ['إعادة تعيين كلمة مرور', 'Réinitialisation de mot de passe'],
   audit_create_admin: ['إنشاء مشرف', 'Création d\'admin'],
+  audit_create_driver: ['إنشاء سائق', 'Création de chauffeur'],
   audit_warn_user: ['تنبيه مستخدم', 'Avertissement utilisateur'],
   audit_insert: ['إضافة', 'Ajout'],
   audit_update: ['تعديل', 'Modification'],

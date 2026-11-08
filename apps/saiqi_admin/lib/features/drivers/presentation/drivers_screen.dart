@@ -21,8 +21,26 @@ class _DriversScreenState extends ConsumerState<DriversScreen> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final drivers = ref.watch(adminDriversProvider(_status));
+    final canCreate = ref.watch(permsProvider).canValidateDrivers;
     return Scaffold(
       appBar: AppBar(title: Text(l.driversTitle)),
+      floatingActionButton: canCreate
+          ? FloatingActionButton.extended(
+              onPressed: () => showModalBottomSheet<void>(
+                context: context,
+                isScrollControlled: true,
+                useSafeArea: true,
+                builder: (_) => _AddDriverSheet(
+                  onCreated: () {
+                    setState(() => _status = DriverStatus.draft);
+                    ref.invalidate(adminDriversProvider(DriverStatus.draft));
+                  },
+                ),
+              ),
+              icon: const Icon(Icons.person_add_alt_1_outlined),
+              label: Text(l.addDriver),
+            )
+          : null,
       body: Column(
         children: [
           Padding(
@@ -56,7 +74,7 @@ class _DriversScreenState extends ConsumerState<DriversScreen> {
                       : all.where((d) => d.displayName.toLowerCase().contains(_query) || d.phone.contains(_query)).toList();
                   if (list.isEmpty) return EmptyView(icon: Icons.people_outline, title: l.noData);
                   return ListView.separated(
-                    padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+                    padding: const EdgeInsets.fromLTRB(16, 4, 16, 96),
                     itemCount: list.length,
                     separatorBuilder: (_, _) => const SizedBox(height: 8),
                     itemBuilder: (_, i) => _DriverTile(d: list[i]),
@@ -74,6 +92,86 @@ class _DriversScreenState extends ConsumerState<DriversScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 4),
         child: ChoiceChip(label: Text(label), selected: _status == value, onSelected: (_) => setState(() => _status = value)),
       );
+}
+
+class _AddDriverSheet extends ConsumerStatefulWidget {
+  const _AddDriverSheet({required this.onCreated});
+  final VoidCallback onCreated;
+
+  @override
+  ConsumerState<_AddDriverSheet> createState() => _AddDriverSheetState();
+}
+
+class _AddDriverSheetState extends ConsumerState<_AddDriverSheet> {
+  final _form = GlobalKey<FormState>();
+  final _name = TextEditingController();
+  final _phone = TextEditingController();
+  final _password = TextEditingController();
+  bool _busy = false;
+
+  @override
+  void dispose() {
+    _name.dispose();
+    _phone.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
+  Future<void> _create() async {
+    final l = context.l10n;
+    if (!(_form.currentState?.validate() ?? false)) return;
+    setState(() => _busy = true);
+    final ok = await runAction(
+      context,
+      () => ref.read(adminRepositoryProvider).createDriver(
+            phone: _phone.text,
+            password: _password.text,
+            fullName: _name.text.trim(),
+          ),
+      successMessage: l.driverCreatedMsg,
+    );
+    if (!mounted) return;
+    setState(() => _busy = false);
+    if (ok) {
+      widget.onCreated();
+      Navigator.of(context).pop();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
+        child: Form(
+          key: _form,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(l.addDriver, style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 8),
+              Text(l.addDriverIntro, style: Theme.of(context).textTheme.bodyMedium),
+              const SizedBox(height: 14),
+              AppTextField(
+                controller: _name,
+                label: l.fullNameLabel,
+                icon: Icons.person_outline,
+                validator: (v) => (v == null || v.trim().length < 3) ? l.vFieldRequired : null,
+              ),
+              const SizedBox(height: 12),
+              PhoneField(controller: _phone),
+              const SizedBox(height: 12),
+              PasswordField(controller: _password, validator: (v) => PasswordField.validateNew(context, v)),
+              const SizedBox(height: 20),
+              PrimaryButton(label: l.register, loading: _busy, onPressed: _create),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _DriverTile extends StatelessWidget {

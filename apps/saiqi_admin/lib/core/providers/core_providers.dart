@@ -72,7 +72,6 @@ class LocaleNotifier extends Notifier<Locale> {
     final lang = code == 'fr' ? 'fr' : 'ar';
     state = Locale(lang);
     await ref.read(sharedPreferencesProvider).setString(_key, lang);
-    await ref.read(sharedPreferencesProvider).setBool('pref.language_chosen', true);
     if (ref.read(supabaseProvider).auth.currentUser != null) {
       try {
         await ref.read(authRepositoryProvider).updateProfile(language: lang);
@@ -94,11 +93,21 @@ class LocaleNotifier extends Notifier<Locale> {
 
 final localeProvider = NotifierProvider<LocaleNotifier, Locale>(LocaleNotifier.new);
 
-/// Vrai une fois que l'utilisateur a choisi sa langue (écran de bienvenue).
-final languageChosenProvider = Provider<bool>((ref) {
-  ref.watch(localeProvider); // se recalcule quand la langue change
-  return ref.watch(sharedPreferencesProvider).getBool('pref.language_chosen') ?? false;
-});
+/// Vrai une fois que l'utilisateur a CONFIRMÉ sa langue sur l'écran de bienvenue (même s'il garde l'arabe par défaut).
+/// État distinct de la locale : confirmer sans rien changer doit quand même notifier le routeur.
+class LanguageChosenNotifier extends Notifier<bool> {
+  static const _key = 'pref.language_chosen';
+
+  @override
+  bool build() => ref.watch(sharedPreferencesProvider).getBool(_key) ?? false;
+
+  Future<void> confirm() async {
+    state = true;
+    await ref.read(sharedPreferencesProvider).setBool(_key, true);
+  }
+}
+
+final languageChosenProvider = NotifierProvider<LanguageChosenNotifier, bool>(LanguageChosenNotifier.new);
 
 class ThemeModeNotifier extends Notifier<ThemeMode> {
   static const _key = 'pref.theme';

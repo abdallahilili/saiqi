@@ -37,8 +37,10 @@ npx supabase secrets set PUSH_WEBHOOK_SECRET=<chaîne aléatoire longue>
 npx supabase secrets set FIREBASE_SERVICE_ACCOUNT="$(cat chemin/vers/firebase-service-account.json)"
 
 npx supabase functions deploy send-push --no-verify-jwt
+npx supabase functions deploy signup --no-verify-jwt
 npx supabase functions deploy admin-reset-password
 npx supabase functions deploy admin-create-admin
+npx supabase functions deploy admin-create-driver
 ```
 
 **Database Webhook** (Dashboard → Database → Webhooks → Create) : table `public.notifications`, événement `INSERT`, type *Supabase Edge Functions* → `send-push`, méthode `POST`, en-tête `x-webhook-secret: <PUSH_WEBHOOK_SECRET>`.
@@ -60,7 +62,7 @@ Comptes de seed (mot de passe `Test1234!`) : admins `+22220000001` (super_admin)
 make db-check     # ou : cd scripts/db-check && npm install && node run.mjs
 ```
 
-PostgreSQL embarqué + stubs Supabase + shim pgTAP : applique les migrations deux fois, charge le seed, vérifie les invariants du wallet et exécute les tests SQL. Voir `docs/DECISIONS.md` (n°2) pour les limites.
+PostgreSQL embarqué + stubs Supabase + shim pgTAP : applique les migrations deux fois, vérifie le **contrat Dart↔SQL**, charge le seed, contrôle les invariants du wallet, exécute les tests SQL puis le **scénario d'intégration complet** (voir `docs/INTEGRATION.md`). Limites : `docs/DECISIONS.md` (n°2).
 
 ## 4. Apps Flutter
 
@@ -76,6 +78,19 @@ flutter run --dart-define=SUPABASE_URL=https://oortozhvjalltvwqfrdy.supabase.co 
 
 Contre un Supabase local, remplacer l'URL par `http://10.0.2.2:54321` (émulateur Android) ou `http://127.0.0.1:54321` (iOS simulateur) et la clé par l'`anon key` affichée par `supabase start`.
 
-## 5. Dépôt Git
+## 5. Build Android / iOS
+
+```bash
+cd apps/saiqi_driver        # idem saiqi_client, saiqi_admin — chaque app se construit seule
+flutter build apk --release --dart-define-from-file=.env
+flutter build appbundle --release --dart-define-from-file=.env
+```
+
+- **Signature Android** : créer `apps/<app>/android/key.properties` (ignoré par git) avec `storeFile`, `storePassword`, `keyAlias`, `keyPassword` ; sans ce fichier le build release est signé avec la clé de debug (essais uniquement, refusé par le Play Store).
+- **Push** : voir `docs/FIREBASE.md` (`google-services.json` / `GoogleService-Info.plist`, non commités).
+- **iOS** (macOS + Xcode) : `flutter build ipa --release --dart-define-from-file=.env` ; configurer l'équipe de signature, la capacité *Push Notifications*, et rattacher les noms localisés : dans Xcode, glisser `ios/Runner/ar.lproj` et `ios/Runner/fr.lproj` dans le groupe *Runner* (cible *Runner* cochée).
+- Régénérer les icônes : `node scripts/generate_icons.mjs` ; réappliquer la configuration native : `node scripts/configure_native.mjs` (idempotent).
+
+## 6. Dépôt Git
 
 `git push` vers `https://github.com/abdallahilili/saiqi.git`. En cas d'échec d'authentification : exécuter `gh auth login` ou configurer un jeton d'accès personnel / une clé SSH ; ne jamais forcer le push.

@@ -24,6 +24,7 @@ String auditActionLabel(AppLocalizations l, String action) => switch (action) {
       'send_announcement' => l.audit_send_announcement,
       'reset_password' => l.audit_reset_password,
       'create_admin' => l.audit_create_admin,
+      'create_driver' => l.audit_create_driver,
       'warn_user' => l.audit_warn_user,
       'insert' => l.audit_insert,
       'update' => l.audit_update,

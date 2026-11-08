@@ -52,6 +52,7 @@ Les apps appellent `supabase.rpc('<fonction>', params: {...})`. Les erreurs mét
 | `admin_handle_complaint(p_complaint_id, p_status, p_resolution)` | super_admin, support | Traite une plainte. |
 | `admin_moderate_review(p_review_id, p_hidden)` | super_admin, support | Masque un avis (retiré du calcul de note). |
 | `admin_send_announcement(p_audience ['drivers'\|'clients'\|'all'], p_title, p_body)` | super_admin, support | Notification à tous. |
+| `admin_warn_user(p_profile_id, p_message)` | super_admin, support | Envoie un avertissement (notification) à un utilisateur ; audité. |
 | `admin_dashboard_stats()` | tous les admins | KPI du tableau de bord. |
 
 Les catalogues (`cities`, `service_types`), `commission_rates` et `app_settings` sont modifiés directement (RLS : `super_admin` seulement, audités par trigger).
@@ -78,8 +79,10 @@ Admin : lecture de tout ; écriture directe seulement sur catalogues/taux/param�
 | Fonction | Auth | Body | Description |
 |---|---|---|---|
 | `send-push` | en-tête `x-webhook-secret` (Database Webhook sur `notifications` INSERT) | payload webhook | Envoie la notification FCM (HTTP v1) au `fcm_token` du profil. |
+| `signup` | anon (`--no-verify-jwt`) | `{ phone, password, role: client\|driver, language?, full_name? }` | Crée le compte via Auth Admin (évite le rate-limit GoTrue `/signup`). Puis l'app ouvre une session avec `signInWithPassword`. |
 | `admin-reset-password` | JWT admin (super_admin ou support) | `{ user_id \| phone, new_password }` | Réinitialise un mot de passe (min. 8). Erreurs : `password_too_short`, `profile_not_found`, `admin_forbidden`, `cannot_modify_self`. |
 | `admin-create-admin` | JWT super_admin | `{ phone, password, full_name, admin_role }` | Crée un compte d'équipe admin. |
+| `admin-create-driver` | JWT super_admin ou validator | `{ phone, password, full_name }` | Crée un compte chauffeur en statut `draft` (le chauffeur complète puis soumet). |
 
 ## Realtime
 

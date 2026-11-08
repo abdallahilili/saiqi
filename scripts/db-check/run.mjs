@@ -11,6 +11,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkContract } from './contract.mjs';
+import { runScenario } from './scenario.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..', '..');
@@ -73,6 +75,10 @@ async function main() {
   }
   if (failures) throw new Error('migrations');
 
+  console.log('→ contrat Dart ↔ SQL (rpc, tables, colonnes)');
+  const checked = await checkContract(db, root, (msg) => fail(msg));
+  if (!failures) pass(`${checked} appels vérifiés contre le schéma réel`);
+
   console.log('→ ré-application des migrations (idempotence)');
   let idem = 0;
   for (const m of migrations) {
@@ -123,6 +129,15 @@ async function main() {
     if (ok && !fileFail) pass(`${f} (${notices.length} assertions)`);
   }
   console.log(`→ assertions : ${okCount}/${total} réussies`);
+
+  console.log('→ scénario d\'intégration (inscription → validation → recharge → course → avis, demande admin, solde insuffisant)');
+  try {
+    await runScenario(db, (m) => console.log(`    ${m}`));
+    pass('scénario complet réussi');
+  } catch (e) {
+    fail(`scénario : ${e.message}`);
+    try { await db.query('reset role'); } catch {}
+  }
   await db.end();
   dbClient = null;
 }

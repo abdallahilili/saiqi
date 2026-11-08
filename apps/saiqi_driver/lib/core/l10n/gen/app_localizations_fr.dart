@@ -63,6 +63,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get searchPeople => 'Rechercher un nom ou un numéro';
 
   @override
+  String get addDriver => 'Ajouter un chauffeur';
+
+  @override
+  String get addDriverIntro =>
+      'Le compte est créé en brouillon ; le chauffeur complète son dossier puis le soumet.';
+
+  @override
+  String get driverCreatedMsg => 'Compte chauffeur créé';
+
+  @override
   String get driverDetail => 'Dossier chauffeur';
 
   @override
@@ -622,6 +632,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get audit_create_admin => 'Création d\'admin';
+
+  @override
+  String get audit_create_driver => 'Création de chauffeur';
 
   @override
   String get audit_warn_user => 'Avertissement utilisateur';
@@ -2135,6 +2148,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get err_rate_limited =>
       'Trop de tentatives. Patientez un instant puis réessayez.';
+
+  @override
+  String get err_driver_row_missing =>
+      'Impossible de créer le dossier chauffeur.';
 
   @override
   String get city => 'Ville';

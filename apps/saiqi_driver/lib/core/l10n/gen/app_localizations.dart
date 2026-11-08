@@ -206,6 +206,24 @@ abstract class AppLocalizations {
   /// **'بحث بالاسم أو الرقم'**
   String get searchPeople;
 
+  /// No description provided for @addDriver.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة سائق'**
+  String get addDriver;
+
+  /// No description provided for @addDriverIntro.
+  ///
+  /// In ar, this message translates to:
+  /// **'يُنشأ الحساب بحالة مسودة؛ يكمل السائق ملفه ثم يقدّمه للمراجعة.'**
+  String get addDriverIntro;
+
+  /// No description provided for @driverCreatedMsg.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إنشاء حساب السائق'**
+  String get driverCreatedMsg;
+
   /// No description provided for @driverDetail.
   ///
   /// In ar, this message translates to:
@@ -1291,6 +1309,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'إنشاء مشرف'**
   String get audit_create_admin;
+
+  /// No description provided for @audit_create_driver.
+  ///
+  /// In ar, this message translates to:
+  /// **'إنشاء سائق'**
+  String get audit_create_driver;
 
   /// No description provided for @audit_warn_user.
   ///
@@ -4117,6 +4141,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'محاولات كثيرة. انتظر قليلًا ثم حاول مجددًا.'**
   String get err_rate_limited;
+
+  /// No description provided for @err_driver_row_missing.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر إنشاء ملف السائق.'**
+  String get err_driver_row_missing;
 
   /// No description provided for @city.
   ///

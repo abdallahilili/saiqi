@@ -63,6 +63,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get searchPeople => 'بحث بالاسم أو الرقم';
 
   @override
+  String get addDriver => 'إضافة سائق';
+
+  @override
+  String get addDriverIntro =>
+      'يُنشأ الحساب بحالة مسودة؛ يكمل السائق ملفه ثم يقدّمه للمراجعة.';
+
+  @override
+  String get driverCreatedMsg => 'تم إنشاء حساب السائق';
+
+  @override
   String get driverDetail => 'ملف السائق';
 
   @override
@@ -621,6 +631,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get audit_create_admin => 'إنشاء مشرف';
+
+  @override
+  String get audit_create_driver => 'إنشاء سائق';
 
   @override
   String get audit_warn_user => 'تنبيه مستخدم';
@@ -2090,6 +2103,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get err_rate_limited => 'محاولات كثيرة. انتظر قليلًا ثم حاول مجددًا.';
+
+  @override
+  String get err_driver_row_missing => 'تعذّر إنشاء ملف السائق.';
 
   @override
   String get city => 'المدينة';

@@ -39,4 +39,20 @@ Décisions prises sans interrompre le travail, avec leur justification. Mises à
 24. **Rôles admin** : `super_admin` (tout), `validator` (dossiers, documents, suspension de chauffeurs), `support` (réservations, recharges, plaintes, clients, annonces). Ajustement de wallet, taux, catalogues et équipe : `super_admin` uniquement.
 25. Clé secrète Supabase : jamais dans le code ni dans git ; `supabase/.env` (ignoré) pour les scripts locaux, secret `SAIQI_SECRET_KEY` pour les Edge Functions (`supabase secrets set`).
 26. `send-push` est protégée par le secret partagé `PUSH_WEBHOOK_SECRET` (le webhook n'envoie pas de JWT utilisateur).
-27. Edge Function supplémentaire **`admin-create-admin`** (non listée au cahier des charges) : la création d'un compte Auth exige la clé secrète, impossible côté app.
+27. Edge Functions **`admin-create-admin`**, **`admin-create-driver`** et **`signup`** : la création d'un compte Auth via la clé secrète (Admin API) évite le rate-limit GoTrue sur `/auth/v1/signup` (message « محاولات كثيرة »). `signup` est publique (`--no-verify-jwt`) et n'accepte que `client` / `driver`. Les chauffeurs créés par un admin (super_admin / validator) démarrent en statut `draft`.
+
+## Applications Flutter
+
+28. **Socle commun par copie** : `apps/saiqi_driver/lib/core` est la source ; `scripts/sync_core.sh` le copie (avec ses tests et `l10n.yaml`) vers client et admin. Les fichiers du socle n'utilisent que des imports **relatifs** pour rester copiables sans modification.
+29. **Textes ar/fr : une seule source** (`scripts/l10n/strings/*.mjs`) qui génère les deux ARB (parité garantie, placeholders vérifiés) **et** les fonctions Dart de libellés (statuts, types, codes d'erreur). Un test vérifie la parité des clés.
+30. **Erreurs** : les fonctions SQL lèvent un code stable (`P0001`, message = code) ; `mapError` le convertit en `AppException`, traduit via `err_<code>`. Retry automatique (backoff) uniquement sur les erreurs réseau et les opérations idempotentes (lectures, uploads).
+31. **Chiffres latins** dans l'interface arabe (montants, dates via la locale `ar_MA`, numéros), usage courant en Mauritanie.
+32. **Riverpod 3** sans réessai automatique (`ProviderScope(retry: …)` désactivé) : chaque écran propose un bouton « Réessayer » explicite (états loading / empty / error partout).
+33. **Temps réel** : `stream()` Supabase sur `bookings`, `booking_offers`, `wallets`, `drivers`, `notifications`, `topup_requests`, `driver_documents`. Les demandes entrantes viennent d'une **vue** (non diffusable) : l'app écoute `booking_offers` puis relit la vue. L'admin utilise des canaux `postgres_changes` (sans snapshot initial) pour rafraîchir ses listes.
+34. **Cache léger** (SharedPreferences) pour villes, services et réglages : servi quand le réseau échoue.
+35. **Push** : `getToken()` / `onTokenRefresh` (dépréciés dans firebase_messaging 17) sont conservés, car le remplaçant `register()` / `onRegistered` fournit un Firebase Installation ID et non un token d'enregistrement utilisable avec l'API HTTP v1 que `send-push` appelle. Firebase est **optionnel** au build (plugin Google Services appliqué seulement si `google-services.json` existe).
+36. **Rôles dans l'UI admin** : la navigation et les écrans masquent ce que le rôle ne peut pas faire (`Perms`), mais la vraie protection est côté SQL (`require_admin_role` + RLS).
+37. **iOS : noms d'app localisés** — les fichiers `ar.lproj` / `fr.lproj` (`InfoPlist.strings`) sont fournis mais **non rattachés** à `project.pbxproj` (modification manuelle risquée sans Xcode) : voir `docs/SETUP.md` (un glisser-déposer dans Xcode). Le nom affiché de base est défini dans `Info.plist`. Android est entièrement localisé (`values-ar`, `values-fr`).
+38. **Icônes** générées par `scripts/generate_icons.mjs` (volant sur dégradé, une couleur par app) : à remplacer par l'identité visuelle finale avant publication.
+39. **Features** : chaque app est organisée par feature (`features/<nom>/presentation`) ; la couche data/domain (modèles, repositories) vit dans le socle `lib/core` partagé et les providers d'app dans `app/providers.dart`.
+40. **Validation sans Docker** : en plus des tests SQL, `scripts/db-check` vérifie que chaque appel `rpc()`, `from()`, colonne filtrée/écrite et indice d'embed FK du code Dart existe dans le schéma réel (120 contrôles).

@@ -30,21 +30,23 @@ class AuthRepository {
         final normalized = PhoneUtils.normalize(phone);
         if (normalized == null) throw const AppException('invalid_phone');
         if (password.length < 8) throw const AppException('password_too_short');
-        final res = await _db.auth.signUp(
+        if (role != UserRole.client && role != UserRole.driver) {
+          throw const AppException('permission_denied');
+        }
+        // Via Edge Function (Auth Admin) pour éviter le rate-limit GoTrue sur /signup.
+        await _db.functions.invoke('signup', body: {
+          'phone': normalized,
+          'password': password,
+          'role': role.db,
+          'language': language,
+          if (fullName != null && fullName.trim().isNotEmpty) 'full_name': fullName.trim(),
+        });
+        final res = await _db.auth.signInWithPassword(
           email: PhoneUtils.technicalEmail(normalized),
           password: password,
-          data: {
-            'phone': normalized,
-            'role': role.db,
-            'language': language,
-            if (fullName != null && fullName.trim().isNotEmpty) 'full_name': fullName.trim(),
-          },
         );
         final user = res.user;
-        if (user == null || res.session == null) {
-          // Confirmation d'email activée par erreur côté Supabase : voir docs/SETUP.md
-          throw const AppException('signup_failed', details: 'confirmation_required');
-        }
+        if (user == null) throw const AppException('signup_failed');
         return _ensureAllowed(await fetchProfile(user.id), role);
       });
 

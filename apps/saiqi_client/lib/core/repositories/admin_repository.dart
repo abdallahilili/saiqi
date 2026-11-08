@@ -262,6 +262,24 @@ class AdminRepository {
         });
       });
 
+  /// Création d'un compte chauffeur en statut `draft` (Edge Function `admin-create-driver`).
+  /// Autorisé : super_admin et validator.
+  Future<void> createDriver({
+    required String phone,
+    required String password,
+    required String fullName,
+  }) =>
+      guard(() async {
+        final normalized = PhoneUtils.normalize(phone);
+        if (normalized == null) throw const AppException('invalid_phone');
+        if (password.length < 8) throw const AppException('password_too_short');
+        await _db.functions.invoke('admin-create-driver', body: {
+          'phone': normalized,
+          'password': password,
+          'full_name': fullName,
+        });
+      });
+
   /// Réinitialisation du mot de passe d'un utilisateur (Edge Function `admin-reset-password`).
   Future<void> resetPassword({required String userId, required String newPassword}) => guard(() async {
         await _db.functions.invoke('admin-reset-password', body: {'user_id': userId, 'new_password': newPassword});

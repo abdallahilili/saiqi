@@ -171,6 +171,7 @@ extension EnumLabels on AppLocalizations {
         'internal_error' => err_internal_error,
         'duplicate' => err_duplicate,
         'rate_limited' => err_rate_limited,
+        'driver_row_missing' => err_driver_row_missing,
         _ => null,
       };
 }

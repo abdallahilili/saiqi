@@ -115,8 +115,8 @@ class LanguageWelcomeScreen extends ConsumerWidget {
               PrimaryButton(
                 label: l.welcomeContinue,
                 onPressed: () async {
-                  // mémorise le choix même si l'utilisateur garde la langue par défaut
-                  await ref.read(localeProvider.notifier).setLanguage(current);
+                  // confirme le choix (même si l'utilisateur garde la langue par défaut) : le routeur prend le relais
+                  await ref.read(languageChosenProvider.notifier).confirm();
                   onContinue();
                 },
               ),

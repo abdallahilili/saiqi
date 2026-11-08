@@ -1,7 +1,7 @@
 # SAIQI — commandes de développement (nécessite make ; sous Windows : Git Bash / WSL / choco install make)
 SUPABASE ?= npx --yes supabase
 
-.PHONY: db-start db-stop db-reset db-push db-check run-client run-driver run-admin test analyze sync-core
+.PHONY: db-start db-stop db-reset db-push db-check db-test run-client run-driver run-admin test analyze sync-core l10n icons native build-apk
 
 db-start:
 	$(SUPABASE) start
@@ -38,3 +38,19 @@ test:
 
 sync-core:
 	bash scripts/sync_core.sh
+
+# Texte ar/fr -> ARB (source : scripts/l10n/strings), puis synchronisation du socle
+l10n:
+	node scripts/l10n/generate.mjs && bash scripts/sync_core.sh
+
+icons:
+	node scripts/generate_icons.mjs
+
+native:
+	node scripts/configure_native.mjs
+
+# Preuve d'autonomie : chaque app se construit seule depuis son dossier
+build-apk:
+	cd apps/saiqi_client && flutter build apk --release --dart-define-from-file=.env.example
+	cd apps/saiqi_driver && flutter build apk --release --dart-define-from-file=.env.example
+	cd apps/saiqi_admin && flutter build apk --release --dart-define-from-file=.env.example
